@@ -3,6 +3,7 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 .container {
@@ -10,7 +11,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 0; 
+    padding: 0;
     margin: 0;
 }
 
@@ -35,7 +36,6 @@ nav {
         a {
             color: #fff;
             &:last-child::after {}
-                
         }
         li {
             display: inline-block;
@@ -114,4 +114,19 @@ input[type=password] {
     margin-top: 2px;
 }
 
-        
+.grp1 {
+    height: 100%;
+    background: #fff;
+    width: 100%;
+    #newevent {
+        border: solid 1px $bleu;
+        background-color: $bleu;
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 21px;
+        font-family: Verdana;
+        color: white;
+        float:right;
+            margin-right :25px;
+    }
+}
