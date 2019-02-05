@@ -1,10 +1,10 @@
 <div id="login">
-     <div class="container">
+     <div class="block">
        
         <label for="utilisateur">Nom d'utilisateur</label>
         <input type="text" placeholder="Nom d'utilisateur" id="user" name="utilisateur" required>
 
-        <label for="password">mot de passe</label>
+        <label for="password">Mot de passe</label>
         <input type="password" placeholder="mot de passe" id="password" name="password" required>
         <div id="alert" >
       
