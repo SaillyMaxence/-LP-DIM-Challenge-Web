@@ -34,9 +34,8 @@ nav {
         transform: translateY(-50%);
         a {
             color: #fff;
-            &:last-child::after {
+            &:last-child::after 
                 
-            }
         }
         li {
             display: inline-block;
