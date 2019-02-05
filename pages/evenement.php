@@ -19,6 +19,6 @@
 </div>
     <script src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/datatable/datatables.min.js"></script>
-    <script src="../scripts/modifier.js"></script>       
+    <script src="../scripts/evenement.js"></script>       
 </body>
 </html>
