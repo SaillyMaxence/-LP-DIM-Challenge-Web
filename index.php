@@ -11,10 +11,11 @@
     <link rel="stylesheet" type="text/css" href="libs\font-awesome\css\font-awesome.min.css">
 </head>
 <body>
+<div  class="container">
     <?php
     require("includes/login_inc.php");
     ?>
-   
+</div>
     <script src="libs/jquery.js"></script>
     <script type="text/javascript" src="libs/datatable/datatables.min.js"></script>
     <script src="index.js"></script>       
