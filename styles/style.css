@@ -19,12 +19,12 @@ body {
   border: solid 1px gray;
   padding: 2%;
   position: absolute;
-  left: 50%;
   top: 50%;
-  width: 300px;
+  left: 50%;
+  width: 310px;
   height: 200px;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
 }
 
 #login label {
@@ -33,17 +33,20 @@ body {
 }
 
 button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #0093d2;
+  color: #f2f2f2;
   padding: 14px 20px;
   margin: 8px 0;
-  border: none;
   cursor: pointer;
   width: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border: solid 1px #0093d2;
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: #f2f2f2;
+  color: #0093d2;
 }
 
 input[type=text],
@@ -65,12 +68,19 @@ input[type=password] {
 }
 
 #alert #alertLabel {
+  font-family: Verdana, Helvetica;
+  font-size: 12px;
+  margin-left: 10px;
+  vertical-align: middle;
   text-align: center;
   color: white;
   padding: 1%;
 }
 
 #closeAlert {
+  float: right;
+  margin-right: 10px;
   color: white;
+  margin-top: 2px;
 }
 /*# sourceMappingURL=style.css.map */
