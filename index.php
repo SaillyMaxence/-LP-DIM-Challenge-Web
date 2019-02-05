@@ -11,11 +11,9 @@
     <link rel="stylesheet" type="text/css" href="libs\font-awesome\css\font-awesome.min.css">
 </head>
 <body>
+<div  class="container">
     <?php
     if(isset($_SESSION["user"])){
-   
-    
-    
     
     }else{
 
@@ -23,7 +21,7 @@
  
     }
     ?>
-
+</div>
  
     <script type="text/javascript" src="dataTables/datatables.min.js"></script>
     <script src="libs/jquery.js"></script>

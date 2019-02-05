@@ -1,4 +1,10 @@
-#login {
+$bleu : #0093d2;
+
+    .container{
+        background-color: $bleu;
+        }
+
+    #login {
     margin: 0 auto;
     border: solid 1px gray;
     padding: 2%;
@@ -7,9 +13,7 @@
     top: 50%;
     width: 300px;
     height: 200px;
-    margin-left: -150px;
-    /* Cette valeur doit être la moitié négative de la valeur du width */
-    margin-top: -150px;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 button {
@@ -25,7 +29,6 @@ button {
     }
 }
 
-    
 input[type=text],
 input[type=password] {
     width: 100%;
