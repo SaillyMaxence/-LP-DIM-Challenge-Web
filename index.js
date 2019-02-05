@@ -43,7 +43,7 @@ function loginElement(){
             dataType: "json",
             success: function(json) {
                 if(json == "true"){
-                    location.reload();
+                    document.location.href="pages/accueil.php";
                 }else{
                     alertElement.style.display = "block";
                     alertLabelElement.innerHTML = "Nom d'utilisateur ou mot de passe incorrect";

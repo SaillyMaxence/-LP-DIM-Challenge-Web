@@ -15,10 +15,10 @@
     
 
 
- <!--   <div id="datatable"></div> -->
+    <table id="datatable"></table> 
 </div>
     <script src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/datatable/datatables.min.js"></script>
-    <script src="../scripts/accueil.js"></script>       
+    <script src="../scripts/modifier.js"></script>       
 </body>
 </html>
