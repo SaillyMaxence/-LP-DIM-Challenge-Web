@@ -21,7 +21,7 @@
         <div class="grp1">
             <table id="datatable"></table>
 <br>
-           <a href="" id="newevent">Nouvelle évenements</a>
+           <a href="" id="newevent">Nouvel événement</a>
         </div>
 
     </div>
