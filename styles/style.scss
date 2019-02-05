@@ -9,8 +9,8 @@ body {
     background-color: $bleu;
     position: relative;
     width: 100%;
-    height: 100vh;
-    padding: 0;
+    height: 100%;
+    padding: 0; 
     margin: 0;
 }
 
@@ -34,7 +34,7 @@ nav {
         transform: translateY(-50%);
         a {
             color: #fff;
-            &:last-child::after 
+            &:last-child::after {}
                 
         }
         li {
@@ -113,3 +113,5 @@ input[type=password] {
     color: white;
     margin-top: 2px;
 }
+
+        

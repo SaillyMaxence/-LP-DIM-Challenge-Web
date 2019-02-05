@@ -12,10 +12,25 @@
 </head>
 <body>
 <div  class="container">
-    
+<nav>
+            <ul>
+                <a href="">
+                    <li>Affichage</li>
+                </a>
+                <a href="evenement.php">
+                    <li>Evénements</li>
+                </a>
+                <a href="">
+                    <li>Deconnection</li>
+                </a>
 
+            </ul>
+        </nav>
+        <div class="grp1">
 
-    <table id="datatable"></table> 
+        <table id="datatable"></table>
+        </div>   
+ 
 </div>
     <script src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/datatable/datatables.min.js"></script>
