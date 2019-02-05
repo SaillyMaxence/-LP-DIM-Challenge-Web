@@ -15,13 +15,12 @@
 <body>
     <div class="container">
         <nav>
-            <ul><a href=""><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Deconnection</li></a>
-            </ul>
+            <ul><a href=""><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Deconnection</li></a></ul>
         </nav>
         <div class="grp1">
             <table id="datatable"></table>
 <br>
-           <a href="" id="newevent">Nouvelle évenements</a>
+           <a href="" id="newevent">Nouvel événement</a>
         </div>
 
     </div>
