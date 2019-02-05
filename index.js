@@ -1,3 +1,5 @@
+$(function() {
+
 if((document.getElementById("connexion")) != null && (document.getElementById("closeAlert") != null)){
 var buttonLoginElement = document.getElementById("connexion");
 var closeAlertElement = document.getElementById("closeAlert");
@@ -71,3 +73,4 @@ function closeAlert(){
     var loginElement = document.getElementById("login");
     loginElement.setAttribute("style","height:200px;");
 }
+});
