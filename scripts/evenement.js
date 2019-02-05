@@ -14,6 +14,7 @@ $(function() {
             }
 
             $('#datatable').DataTable( {
+                responsive: true,
                 data: data,
                 columns: [
                     { data: 'EventId' },
