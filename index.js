@@ -16,10 +16,10 @@ function loginElement(){
     var alertLabelElement = document.getElementById("alertLabel");
     if(login.value == "" || pass.value == ""){
         alertElement.style.display = "block";
-        alertLabelElement.innerHTML = "Veuillez renseignez les champs ci dessous";
+        alertLabelElement.innerHTML = "Veuillez renseignez les champs ci-dessous";
         
         var loginElement = document.getElementById("login");
-        loginElement.setAttribute("style","height:250px;margin-top:-125px");
+        loginElement.setAttribute("style","height:250px;");
 
 
         if(login.value == ""){
@@ -48,7 +48,7 @@ function loginElement(){
                     alertElement.style.display = "block";
                     alertLabelElement.innerHTML = "Nom d'utilisateur ou mot de passe incorrect";
                     var loginElement = document.getElementById("login");
-                    loginElement.setAttribute("style","height:250px;margin-top:-125px");
+                    loginElement.setAttribute("style","height:250px;");
                 }
             }
         
@@ -69,5 +69,5 @@ function closeAlert(){
     pass.style.borderColor  = "#ccc";
     alertElement.style.display = "none";
     var loginElement = document.getElementById("login");
-    loginElement.setAttribute("style","height:200px;margin-top:-100px");
+    loginElement.setAttribute("style","height:200px;");
 }

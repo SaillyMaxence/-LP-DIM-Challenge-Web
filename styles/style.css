@@ -1,33 +1,56 @@
-@charset "UTF-8";
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #0093d2;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
 #login {
+  background-color: #FFF;
   margin: 0 auto;
   border: solid 1px gray;
   padding: 2%;
   position: absolute;
-  left: 50%;
   top: 50%;
-  width: 300px;
+  left: 50%;
+  width: 310px;
   height: 200px;
-  margin-left: -150px;
-  /* Cette valeur doit être la moitié négative de la valeur du width */
-  margin-top: -150px;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+#login label {
+  font-family: Verdana, Helvetica;
+  font-size: 14px;
 }
 
 button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #0093d2;
+  color: #f2f2f2;
   padding: 14px 20px;
   margin: 8px 0;
-  border: none;
   cursor: pointer;
   width: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border: solid 1px #0093d2;
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: #f2f2f2;
+  color: #0093d2;
 }
 
-input[type=text], input[type=password] {
+input[type=text],
+input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -45,12 +68,19 @@ input[type=text], input[type=password] {
 }
 
 #alert #alertLabel {
+  font-family: Verdana, Helvetica;
+  font-size: 12px;
+  margin-left: 10px;
+  vertical-align: middle;
   text-align: center;
   color: white;
   padding: 1%;
 }
 
 #closeAlert {
+  float: right;
+  margin-right: 10px;
   color: white;
+  margin-top: 2px;
 }
 /*# sourceMappingURL=style.css.map */
