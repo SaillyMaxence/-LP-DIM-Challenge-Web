@@ -1,9 +1,9 @@
 <?php
     class LDAP
     {
-        private $con = "false";
+        private $con = "false"; // stock a connexion server LDAP
 
-        public function Connexion($addr,$port)
+        public function Connexion($addr,$port) // connect to server LDAP with address and port
         {
             $this->_con = ldap_connect($addr,$port);
             ldap_set_option($this->_con, LDAP_OPT_PROTOCOL_VERSION, 3);
