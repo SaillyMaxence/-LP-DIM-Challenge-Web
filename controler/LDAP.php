@@ -21,11 +21,15 @@
 
             if($this->_con)
             {
-                if(ldap_bind($this->_con,$basedn,$password))
-                {
-                    return true;
-                }else
+                try{
+                    if(@ldap_bind($this->_con,$basedn,$password))
+                    {
+                        return true;
+                    }else
+                        return false;
+                }catch(Exception $e){
                     return false;
+                }
             }else
                 return false;
         }
