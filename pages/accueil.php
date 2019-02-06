@@ -19,7 +19,7 @@
         </ul>
     </nav>
     <div class="container">
-        <div class="grp1">Bonjour <?php $_SESSION["user"]; ?></div>
+        <div class="grp1">Bonjour <?php echo $_SESSION["user"];?></div>
     </div>
     <script src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/datatable/datatables.min.js"></script>
