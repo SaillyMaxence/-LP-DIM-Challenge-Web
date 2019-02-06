@@ -40,8 +40,7 @@
             
         </div>
         <button id="addEvent"> ajout </button>
-
-    </div>
+</div>
     <script type="text/javascript" src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
     <script src="../scripts/gestionevent.js"></script>
