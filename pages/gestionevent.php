@@ -27,13 +27,16 @@
     <div class="container">
 
         <div class="grp1">
-        <input type="text" name="titreevent" id="titreevent" placeholder="Titre de l'évènement">
+            <input type="text" name="titreevent" id="titreevent" placeholder="Titre de l'évènement">
             <div class="zone-image">
                 <img id="picture" src="http://placehold.it/180" alt="your image" />
-                <input type='file' onchange="readURL(this);"  />
+                <input type='file' onchange="readURL(this);" />
             </div>
-            
             <textarea class="content description" name="example"></textarea>
+            <div class="lesdates">
+            <span>Date début :</span><input type="date" name="datedeb" id="datedeb"> <span>Date Fin :</span>
+                <input type="date" name="datefin" id="datefin">
+            </div>
         </div>
 
 

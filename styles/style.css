@@ -182,4 +182,13 @@ input[type=file] {
   position: absolute;
   text-align: center;
 }
+
+.lesdates {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 80%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 /*# sourceMappingURL=style.css.map */

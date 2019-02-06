@@ -165,12 +165,22 @@ input[type=file] {
 .richText {
     width: 50%;
     float: right;
-    right:10%;
-        position: absolute;
+    right: 10%;
+    position: absolute;
     top: 20%;
 }
-    .zone-image{
-        left: 10%;
-        top: 20%;
-        position: absolute;
-        text-align: center;}
+
+.zone-image {
+    left: 10%;
+    top: 20%;
+    position: absolute;
+    text-align: center;
+}
+
+    .lesdates{
+        display: inline-block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 80%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;}
