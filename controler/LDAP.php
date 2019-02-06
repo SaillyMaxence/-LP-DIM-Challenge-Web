@@ -5,7 +5,7 @@
 
         public function Connexion($addr,$port)
         {
-            $this->_con = ldap_connect("10.10.28.101",389);
+            $this->_con = ldap_connect($addr,$port);
             ldap_set_option($this->_con, LDAP_OPT_PROTOCOL_VERSION, 3);
             ldap_set_option($this->_con, LDAP_OPT_REFERRALS, 0);
 
