@@ -2,8 +2,6 @@ $(function() {
    
    getEvent();
    
-   var supprimer = document.getElementById("supprimer");
-
    $("body").on("click","#supprimer", function(){
         deleteEvent(this.getAttribute("data-id"));
    });
@@ -19,59 +17,53 @@ function getEvent(){
 
             for(var i = 0;i<dateLength ; i++){
                 
-                data[i].buttonModif = '<button id="modification" data-id="'+ data[i].EventId +'">Modification</button>';
+                data[i].buttonModif = '<button id="modification" data-id="'+ data[i].EventId +'">Modification <i class="fa fa-pencil    "/></button>';
                 data[i].buttonDelete = '<button id="supprimer" data-id="'+ data[i].EventId +'">Supprimer</button>';
-
+                
             }
-
-            $('#datatable').DataTable( {
-                responsive: true,
-                data: data,
-                columnsDefs: [
-                    {"name": "EventId", "target":0},
-                    {"name": "EventTitre", "target":1},
-                    {"name": "EventMessage", "target":2},
-                    {"name": "EventDateDebut", "target":3},
-                    {"name": "EventDateFin", "target":4},
-                    {"name": "EventIsActiv", "target":5},
-                    {"name": "ButtonModif", "target":6},
-                    {"name": "ButtonDelete", "target":7},
-
+            var dataList = data;
+            console.log(dataList);
+            var table = new Tabulator("#example-table", {
+                //height:205, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+                data:dataList, //assign data to table
+                layout:"fitColumns", //fit columns to width of table (optional)
+                columns:[ //Define Table Columns
+                    {title:"Id", field:"EventId", width:15},
+                    {title:"Titre", field:"EventTitre",},
+                    {title:"Description", field:"EventMessage"},
+                    {title:"Date de début", field:"EventDateDebut"},
+                    {title:"Date de fin", field:"EventDateFin"},
+                    {title:"Actif", field:"EventIsActiv"},
+                    {title:"", field:"buttonModif", formatter:"html"},
+                    {title:"", field:"buttonDelete",formatter:"html"},
                 ],
-                columns: [
-                    { data: 'EventId' },
-                    { data: 'EventTitre' },
-                    { data: 'EventMessage' },
-                    { data: 'EventDateDebut'},
-                    { data: 'EventDateFin'},
-                    { data: 'EventIsActiv'},
-                    { data: 'buttonModif'},
-                    { data: 'buttonDelete'}
-                ]
-            } );
+           });
 
-        }
-    
-    });
-}
 
-function deleteEvent(id){
-    $.ajax({
-        type: "POST",
-        url: "../controler/deleteEvent.php",
-        data:{id : id},
-        dataType: "json",
-        success: function(data) {
-            $(this).parent().parent().remove();
-            //getEvent();
-        }
-    });
+
+        
 }
 
 
 
 });
+}
 
+function deleteEvent(id){
+    $.ajax({
+        type: "POST",
+        data:{id : id},
+        url: "../controler/deleteEvent.php",
+        dataType: "json",
+        success: function(data) {
+            getEvent();
+
+        }
+    });
+
+
+
+}
 
 function readURL(input) {
     if (input.files && input.files[0]) {
@@ -85,3 +77,4 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+});
