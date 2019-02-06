@@ -127,8 +127,9 @@ button:hover {
 
 .grp1 {
   height: 100%;
-  background: #fff;
+  background: #f2f2f2;
   width: 100%;
+  padding-top: 20px;
 }
 
 .grp1 #newevent {
@@ -144,11 +145,41 @@ button:hover {
 }
 
 img {
-  max-width: 180px;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 input[type=file] {
   padding: 10px;
-  background: #2d2d2d;
+  background-color: #FFF;
+  display: block;
+}
+
+#titreevent {
+  width: 33%;
+  margin: auto;
+  display: block;
+  position: relative;
+  height: 70px;
+  text-align: center;
+  font-size: 38px;
+  border: none;
+  margin-top: 30px;
+  border-radius: 25px;
+}
+
+.richText {
+  width: 50%;
+  float: right;
+  right: 10%;
+  position: absolute;
+  top: 20%;
+}
+
+.zone-image {
+  left: 10%;
+  top: 20%;
+  position: absolute;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
