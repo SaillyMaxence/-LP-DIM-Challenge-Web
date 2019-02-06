@@ -18,7 +18,7 @@ function loginElement(){
     var alertLabelElement = document.getElementById("alertLabel");
     if(login.value == "" || pass.value == ""){
         alertElement.style.display = "block";
-        alertLabelElement.innerHTML = "Veuillez renseignez les champs ci-dessous";
+        alertLabelElement.innerHTML = "Veuillez renseignez les champs ci-dessus";
         
         var loginElement = document.getElementById("login");
         loginElement.setAttribute("style","height:250px;");

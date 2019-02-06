@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,11 +16,10 @@
             <a href=""><li>Affichage</li>
             </a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Deconnection</li>
             </a> 
-            
         </ul>
     </nav>
     <div class="container">
-        <div class="grp1">Bonjour [nom utilisateur]</div>
+        <div class="grp1">Bonjour <?php $_SESSION["user"]; ?></div>
     </div>
     <script src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/datatable/datatables.min.js"></script>
