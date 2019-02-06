@@ -38,8 +38,7 @@
                 <input type="date" name="datefin" id="datefin">
             </div>
         </div>
-
-
+        
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="../libs/datatable/datatables.min.js"></script>
