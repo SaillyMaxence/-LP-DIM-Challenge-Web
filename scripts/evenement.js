@@ -1,4 +1,15 @@
 $(function() {
+   
+   getEvent();
+   
+   var supprimer = document.getElementById("supprimer");
+
+   $("body").on("click","#supprimer", function(){
+        deleteEvent(this.getAttribute("data-id"));
+   });
+
+
+function getEvent(){
     $.ajax({
         type: "POST",
         url: "../controler/showEvent.php",
@@ -16,6 +27,17 @@ $(function() {
             $('#datatable').DataTable( {
                 responsive: true,
                 data: data,
+                columnsDefs: [
+                    {"name": "EventId", "target":0},
+                    {"name": "EventTitre", "target":1},
+                    {"name": "EventMessage", "target":2},
+                    {"name": "EventDateDebut", "target":3},
+                    {"name": "EventDateFin", "target":4},
+                    {"name": "EventIsActiv", "target":5},
+                    {"name": "ButtonModif", "target":6},
+                    {"name": "ButtonDelete", "target":7},
+
+                ],
                 columns: [
                     { data: 'EventId' },
                     { data: 'EventTitre' },
@@ -31,6 +53,21 @@ $(function() {
         }
     
     });
+}
+
+function deleteEvent(id){
+    $.ajax({
+        type: "POST",
+        url: "../controler/deleteEvent.php",
+        data:{id : id},
+        dataType: "json",
+        success: function(data) {
+            $(this).parent().parent().remove();
+            //getEvent();
+        }
+    });
+}
+
 
 
 });
