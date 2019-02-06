@@ -1,6 +1,7 @@
 $bleu: #0093d2;
-
-    html{height: 100%}
+html {
+    height: 100%
+}
 
 body {
     position: relative;
@@ -8,7 +9,7 @@ body {
     padding: 0;
     height: 100%;
 }
- 
+
 .container {
     background-color: $bleu;
     position: relative;
@@ -84,14 +85,16 @@ button {
     }
 }
 
-input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.block {
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
 }
 
 #alert {
@@ -129,7 +132,16 @@ input[type=password] {
         font-size: 21px;
         font-family: Verdana;
         color: white;
-        float:right;
-            margin-right :25px;
+        float: right;
+        margin-right: 25px;
     }
+}
+
+img {
+    max-width: 180px;
+}
+
+input[type=file] {
+    padding: 10px;
+    background: #2d2d2d;
 }
