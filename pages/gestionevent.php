@@ -30,20 +30,21 @@
             <input type="text" name="titreevent" id="titreevent" placeholder="Titre de l'évènement">
             <div class="zone-image">
                 <img id="picture" src="http://placehold.it/180" alt="your image" />
-                <input type='file' onchange="readURL(this);" />
+                <input type='file'id="pictureToGet" onchange="readURL(this);" />
             </div>
-            <textarea class="content description" name="example"></textarea>
+            <textarea class="content description" id="description" name="example"></textarea>
             <div class="lesdates">
             <span>Date début :</span><input type="date" name="datedeb" id="datedeb"> <span>Date Fin :</span>
                 <input type="date" name="datefin" id="datefin">
             </div>
+            
         </div>
-
+        <button id="addEvent"> ajout </button>
 
     </div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="../libs/datatable/datatables.min.js"></script>
-    <script src="../scripts/evenement.js"></script>
+    <script type="text/javascript" src="../libs/jquery.js"></script>
+    <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
+    <script src="../scripts/gestionevent.js"></script>
     <script src="../libs/jquery.richtext.js"></script>
     <script>
         $(document).ready(function () {
