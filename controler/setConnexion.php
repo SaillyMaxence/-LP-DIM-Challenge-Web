@@ -29,7 +29,7 @@ if(isset($_POST["login"]) && isset($_POST["pass"])){
                 $return = json_encode("true"); // create fromat json of true
                 $_SESSION["user"] = $loginUser; // create session user with login user
             }else
-                $return = json_encode("false"); // create fromat json of false
+                $return = json_encode("badRight"); // create fromat json of false
 
             echo $return;
             
