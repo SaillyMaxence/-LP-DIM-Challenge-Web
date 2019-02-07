@@ -1,8 +1,8 @@
 <?php
 require("../includes/database_inc.php");
 
-// Preparing the request to grab everything from the users table
-$request = $db->prepare("SELECT * FROM Users");
+// Preparing the request to grab everything from the rights table
+$request = $db->prepare("SELECT * FROM Rights");
 // Firing the request
 $request->execute();
 // Fetching data from the request
