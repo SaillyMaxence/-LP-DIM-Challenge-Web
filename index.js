@@ -45,7 +45,7 @@ function loginElement(){
             dataType: "json",
             success: function(json) {
                 if(json == "true"){
-                    document.location.href="pages/accueil.php";
+                    document.location.href="pages/evenement.php";
                 }
                 else if(json == "badRight")
                 {
