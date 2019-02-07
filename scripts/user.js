@@ -54,7 +54,7 @@ function deleteEvent(id){
         dataType: "json",
         success: function(data) {
             getEvent();
-
+            Location.reload();
         }
     });
 
