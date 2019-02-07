@@ -12,7 +12,7 @@
 <body>
     <nav>
         <ul>
-            <a href=""><li>Affichage</li>
+            <a href="affichage.php" target="_blank"><li>Affichage</li>
             </a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Déconnexion</li>
             </a> 
         </ul>

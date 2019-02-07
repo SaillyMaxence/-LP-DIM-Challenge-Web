@@ -15,7 +15,7 @@
 
 <body>
     <nav>
-        <ul><a href="">
+        <ul><a href="affichage.php" target="_blank">
                 <li>Affichage</li>
             </a><a href="evenement.php">
                 <li>Evénements</li>

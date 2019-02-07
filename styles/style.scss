@@ -30,7 +30,7 @@ nav {
     -webkit-box-shadow: 0px 7px 23px -2px rgba(0, 0, 0, 0.35);
     -moz-box-shadow: 0px 7px 23px -2px rgba(0, 0, 0, 0.35);
     box-shadow: 0px 7px 23px -2px rgba(0, 0, 0, 0.35);
-        z-index: 2;
+    z-index: 2;
     ul {
         width: 100%;
         margin: 0;
@@ -120,18 +120,18 @@ button {
     color: white;
     margin-top: 2px;
 }
-.grp2{ 
+
+.grp2 {
     background: #f2f2f2;
     width: 100%;
-    padding-top: 20px;
-   // position: relative;
-    }
+    padding-top: 20px; // position: relative;
+}
+
 .grp1 {
     height: 100%;
     background: #f2f2f2;
     width: 100%;
-    padding-top: 20px;
-  //  position: relative;
+    padding-top: 20px; //  position: relative;
     #newevent {
         border: solid 1px $bleu;
         background-color: $bleu;
@@ -184,10 +184,43 @@ input[type=file] {
     text-align: center;
 }
 
-    .lesdates{
-        display: inline-block;
+.lesdates {
+    display: inline-block;
     position: absolute;
     width: 100%;
     text-align: center;
     top: 80%;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;}
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.affichage {
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .rslides {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        max-width: 100% !important;
+        .ecran {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            text-align: center; 
+            h1 {
+                font-size: 64px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                
+            }
+            .annonce {
+                width: 100%;
+                .photo,
+                .description {
+                    display: inline-block;
+                    width: 49%;
+                }
+            }
+        }
+    }
+}

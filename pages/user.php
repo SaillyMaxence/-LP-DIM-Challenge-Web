@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <nav>
-            <ul><a href=""><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Déconnexion</li></a></ul>
+            <ul><a href="affichage.php" target="_blank"><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Déconnexion</li></a></ul>
         </nav>
         <div class="grp1">
 	        <div id="example-table"></div>
