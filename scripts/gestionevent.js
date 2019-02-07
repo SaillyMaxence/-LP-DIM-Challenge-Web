@@ -1,59 +1,60 @@
-$(function() {
+$(function () {
     var add = document.getElementById("addEvent");
 
-    add.addEventListener("click",addNewEvent);
+    add.addEventListener("click", addNewEvent);
 
-    function addNewEvent(){
+    function addNewEvent() {
         console.log("clique");
         var picture = document.getElementById("pictureToGet");
-        var title   = document.getElementById("titreevent");
+        var title = document.getElementById("titreevent");
         var dateDeb = document.getElementById("datedeb");
         var dateFin = document.getElementById("datefin");
         var description = document.getElementById("description");
 
         console.log(dateDeb);
-        var titleElement   =  title.value;
+        var titleElement = title.value;
         var dateDebElement = dateDeb.value;
         var dateFinElement = dateFin.value;
         var descriptionElement = description.value;
-    
+
         console.log(dateDebElement);
-        if(titleElement == "" || dateDebElement == "" || dateFinElement == "" || descriptionElement == ""){
-            if(titleElement == ""){
+        if (titleElement == "" || dateDebElement == "" || dateFinElement == "" || descriptionElement == "") {
+            if (titleElement == "") {
 
             }
-            if(dateDebElement == ""){
+            if (dateDebElement == "") {
 
             }
-            if(dateFinElement == ""){
+            if (dateFinElement == "") {
 
             }
-            if(descriptionElement == ""){
+            if (descriptionElement == "") {
 
             }
-        }else{
+        } else {
             console.log(new Date());
 
-            dateDebElement =  moment(dateDebElement).format('YYYY-MM-DD');
-            dateFinElement =  moment(dateFinElement).format('YYYY-MM-DD');
+            dateDebElement = moment(dateDebElement).format('YYYY-MM-DD');
+            dateFinElement = moment(dateFinElement).format('YYYY-MM-DD');
 
-//            var data = [titleElement,descriptionElement,dateDebElement,dateFinElement];
+            //            var data = [titleElement,descriptionElement,dateDebElement,dateFinElement];
 
             $.ajax({
                 type: "POST",
-                data:{
-                    title : titleElement,
-                    message : descriptionElement,
-                    start : dateDebElement,
-                    end : dateFinElement
+                data: {
+                    title: titleElement,
+                    message: descriptionElement,
+                    start: dateDebElement,
+                    end: dateFinElement
                 },
                 url: "../controler/addEvent.php",
                 dataType: "json",
-                success: function(data) {
-        
+                success: function (data) {
+
                 }
-            }); 
+            });
 
         }
 
     }
+});
