@@ -19,9 +19,9 @@
                 <li>Affichage</li>
             </a><a href="evenement.php">
                 <li>Evénements</li>
-            </a><a href="">
-                <li>Déconnexion</li>
-            </a></ul>
+            </a>
+                <li id="deconnexion">Déconnexion</li>
+            </ul>
     </nav>
     <div class="container">
 
@@ -44,6 +44,7 @@
     <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
     <script src="../scripts/gestionevent.js"></script>
     <script src="../libs/jquery.richtext.js"></script>
+    <script src="../scripts/deconnexion.js"></script>
     <script>
         $(document).ready(function () {
             $('.content').richText();

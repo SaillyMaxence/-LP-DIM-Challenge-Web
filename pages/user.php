@@ -15,7 +15,8 @@
 <body>
     <div class="container">
         <nav>
-            <ul><a href=""><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Déconnexion</li></a></ul>
+            <ul><a href=""><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a>
+            <li id="deconnexion" >Déconnexion</li></ul>
         </nav>
         <div class="grp1">
 	        <div id="example-table"></div>
@@ -27,6 +28,7 @@
     <script src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/tabulator/dist/js/tabulator.min.js"></script>
     <script src="../scripts/user.js"></script>
+    <script src="../scripts/deconnexion.js"></script>
 </body>
 
 </html>

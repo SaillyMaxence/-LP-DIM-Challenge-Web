@@ -17,9 +17,7 @@
                 <a href="evenement.php">
                     <li>Evénements</li>
                 </a>
-                <a href="">
-                    <li>Déconnexion</li>
-                </a>
+                    <li id="deconnexion" >Déconnexion</li>
             </ul>
         </nav>
         <div class="container">
@@ -41,6 +39,7 @@
         <script type="text/javascript" src="../libs/jquery.js"></script>
         <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
         <script src="../scripts/gestionuser.js"></script>
+        <script src="../scripts/deconnexion.js"></script>
         <script>
             function readURL(input) {
                 if (input.files && input.files[0]) {
