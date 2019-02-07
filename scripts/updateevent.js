@@ -52,10 +52,10 @@ $(function () {
                 },
                 url: "../controler/updateEvent.php",
                 dataType: "json",
-                success: function (data) {
+                success: function () {
                     window.location = "evenement.php";
-                }
-                error: function(data) {
+                },
+                error: function() {
                     window.location = "evenement.php";
                 }
             });
@@ -117,7 +117,7 @@ $(function () {
                     datedeb = datedeb.split(' ')[0];
                     $("#datedeb").val(formatDate(datedeb));
                     datefin = item.EventDateFin;
-                    datefin = datedeb.split(' ')[0];
+                    datefin = datefin.split(' ')[0];
                     $("#datefin").val(formatDate(datefin));
                 });
             }
