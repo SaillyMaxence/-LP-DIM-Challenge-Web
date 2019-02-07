@@ -245,15 +245,15 @@ input[type=file] {
           flex-direction: row;
 }
 
-.affichage .rslides .ecran .annonce #photo,
-.affichage .rslides .ecran .annonce #description {
+.affichage .rslides .ecran .annonce .photo,
+.affichage .rslides .ecran .annonce .description {
   width: 49%;
   text-align: center;
   height: 100%;
 }
 
-.affichage .rslides .ecran .annonce #photo img,
-.affichage .rslides .ecran .annonce #description img {
+.affichage .rslides .ecran .annonce .photo img,
+.affichage .rslides .ecran .annonce .description img {
   display: block;
   margin: auto;
   float: none;
