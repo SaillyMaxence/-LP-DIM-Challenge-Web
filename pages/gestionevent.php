@@ -19,9 +19,9 @@
                 <li>Affichage</li>
             </a><a href="evenement.php">
                 <li>Evénements</li>
-            </a><a href="">
-                <li>Déconnexion</li>
-            </a></ul>
+            </a>
+                <li id="deconnexion">Déconnexion</li>
+            </ul>
     </nav>
     <div class="container">
 
