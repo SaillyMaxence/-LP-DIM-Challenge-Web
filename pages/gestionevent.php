@@ -45,8 +45,9 @@
 
         </div>
         <div class="grp2">
-            <button id="addEvent" type="submit" class="submit"> ajout </button>
+            <button id="addEvent" type="submit" class="submit"> Ajouter </button>
         </div>
+       
     </div>
     </form>
     <script type="text/javascript" src="../libs/jquery.js"></script>

@@ -26,28 +26,6 @@
 <body>
     <div class="affichage">
         <ul class="rslides" id="slider1">
-            <li>
-                <div class="ecran">
-                    <h1>OUI</h1>
-                    <div class="annonce">
-                        <div class="photo"><img src="../src/image/iut_logo.png" alt=""></div>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate
-                            eaque saepe maiores nobis omnis earum non beatae fuga harum assumenda, sequi magnam quam
-                            eos reprehenderit maxime accusantium aspernatur modi optio.</div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="ecran">
-                    <h1>NON</h1>
-                    <div class="annonce">
-                        <div class="photo"><img src="../src/image/iut_logo.png" alt=""></div>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate
-                            eaque saepe maiores nobis omnis earum non beatae fuga harum assumenda, sequi magnam quam
-                            eos reprehenderit maxime accusantium aspernatur modi optio.</div>
-                    </div>
-                </div>
-            </li>
         </ul>
     </div>
 </body>
