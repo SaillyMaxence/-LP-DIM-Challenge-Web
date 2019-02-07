@@ -12,6 +12,7 @@ $(function () {
          processData:false,
          success: function(data)
             {
+                alert(data);
            // view uploaded file.
            $("#preview").html(data).fadeIn();
            $("#form")[0].reset(); 

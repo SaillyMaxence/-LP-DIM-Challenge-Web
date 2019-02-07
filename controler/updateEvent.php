@@ -3,7 +3,7 @@ var_dump($_POST);
 require("../includes/database_inc.php");
 $path = '../src/image/'; // upload directory
 
-if(isset($_FILES['pic'])){
+if($_FILES['pic']['error'] == 0){
 	if(!empty($_POST['titreevent']) || !empty($_POST['description']) || !empty($_POST['datedeb']) || !empty($_POST['datefin']) || !empty($_FILES['pic']))
 	{
 	$img = $_FILES['pic']['name'];
@@ -48,7 +48,7 @@ if(isset($_FILES['pic'])){
 	}
 	
 	}	
-}else{
+}else {
 	echo "ici";
 	$title = $_POST['titreevent'];
 	$message  = $_POST['description'];
