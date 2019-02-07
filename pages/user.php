@@ -21,7 +21,7 @@
         <div class="grp1">
 	        <div id="example-table"></div>
 			<br>
-        	<a href="#" id="newevent">Nouvel utilisateur</a>
+        	<a href="gestionuser.php" id="newevent">Nouvel utilisateur</a>
         </div>
 
     </div>
