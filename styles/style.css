@@ -198,4 +198,40 @@ input[type=file] {
   top: 80%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.affichage {
+  background-color: #FFF;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.affichage .rslides {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  max-width: 100% !important;
+}
+
+.affichage .rslides .ecran {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.affichage .rslides .ecran h1 {
+  font-size: 64px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.affichage .rslides .ecran .annonce {
+  width: 100%;
+}
+
+.affichage .rslides .ecran .annonce .photo,
+.affichage .rslides .ecran .annonce .description {
+  display: inline-block;
+  width: 49%;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php session_start(); 
+    if(!isset($_SESSION['user']))
+        header('Location: ../index.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -15,8 +18,7 @@
 <body>
     <div class="container">
         <nav>
-            <ul><a href=""><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a>
-            <li id="deconnexion" >Déconnexion</li></ul>
+            <ul><a href="affichage.php" target="_blank"><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Déconnexion</li></a></ul>
         </nav>
         <div class="grp1">
 	        <div id="example-table"></div>

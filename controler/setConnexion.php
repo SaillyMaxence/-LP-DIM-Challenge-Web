@@ -16,7 +16,7 @@ if(isset($_POST["login"]) && isset($_POST["pass"])){
     if($con) // If connexion Server ldap is true
     {
         /// if user exist with this password AND verify if user belongs of a specific group
-        if($ldap->VerifUserGroup($loginUser,$passwordUser,"lpdim")) 
+        if($ldap->VerifUserGroup($loginUser,$passwordUser,"lpdim") || $ldap->VerifUserGroup($loginUser,$passwordUser,"enseignant")) 
         {
             // The query requete SQL, SELECT user where userName is user login
             $query= "SELECT * FROM users WHERE UserName=:UserName"; 
