@@ -26,7 +26,7 @@
 <body>
     <div class="affichage">
         <ul class="rslides" id="slider1">
-            
+
         </ul>
     </div>
 </body>
