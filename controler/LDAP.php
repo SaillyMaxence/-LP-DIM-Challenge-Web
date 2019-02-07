@@ -33,6 +33,7 @@
             }else
                 return false;
         }
+		
 
         public function VerifUserGroup($user,$password,$group)
         {
