@@ -124,7 +124,8 @@ button {
 .grp2 {
     background: #f2f2f2;
     width: 100%;
-    padding-top: 20px; // position: relative;
+    text-align: center;
+    margin-top: -150px; // position: relative;
 }
 
 .grp1 {
@@ -189,7 +190,7 @@ input[type=file] {
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 80%;
+    bottom: 15%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -240,3 +241,7 @@ input[type=file] {
         }
     }
 }
+    .submit{
+        width: 300px;
+        border-radius: 25px;
+        margin: auto;}

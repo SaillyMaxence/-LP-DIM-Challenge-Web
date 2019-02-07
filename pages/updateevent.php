@@ -37,8 +37,9 @@
                 <input type="date" name="datefin" id="datefin">
             </div>
             
+        </div> <div class="grp2">
+            <button id="addEvent" type="submit" class="submit"> Modifier </button>
         </div>
-        <button id="addEvent"> Modifier </button>
 </div>
     <script type="text/javascript" src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
