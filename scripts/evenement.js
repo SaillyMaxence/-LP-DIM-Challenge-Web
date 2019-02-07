@@ -38,6 +38,9 @@ function getEvent(){
                     {title:"Date de début", field:"EventDateDebut"},
                     {title:"Date de fin", field:"EventDateFin"},
                     {title:"Actif", field:"EventIsActiv"},
+                    {title:"Photo", field:"photo", formatter:"image", formatterParams:{
+                        width:"100%"
+                    }},
                     {title:"", field:"buttonModif", formatter:"html"},
                     {title:"", field:"buttonDelete",formatter:"html"},
                 ],
