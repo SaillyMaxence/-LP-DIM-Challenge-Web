@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php session_start(); 
+    if(!isset($_SESSION['user']))
+        header('Location: ../index.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,15 +20,18 @@
                 <a href="evenement.php">
                     <li>Evénements</li>
                 </a>
-                <a href="">
-                    <li>Déconnexion</li>
-                </a>
+                    <a href=""><li id="deconnexion" >Déconnexion</li></a>
             </ul>
         </nav>
         <div class="container">
             <div class="grp1">
                 <label for="username">ID utilisateur LDAP</label>
                 <input type="text" name="username" id="username">
+                <div id="rights">
+                    Rôles:
+                    <br>
+                    <!-- Roles will be shown here as checkboxes -->
+                </div>
                 <div class="zone-image">
                     <img id="picture" src="http://placehold.it/180" alt="your image" />
                     <input type='file'id="pictureToGet" onchange="readURL(this);" />
@@ -36,6 +42,7 @@
         <script type="text/javascript" src="../libs/jquery.js"></script>
         <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
         <script src="../scripts/gestionuser.js"></script>
+        <script src="../scripts/deconnexion.js"></script>
         <script>
             function readURL(input) {
                 if (input.files && input.files[0]) {

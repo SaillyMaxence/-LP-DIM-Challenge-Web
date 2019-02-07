@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php session_start(); 
+    if(!isset($_SESSION['user']))
+        header('Location: ../index.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -19,31 +22,34 @@
                 <li>Affichage</li>
             </a><a href="evenement.php">
                 <li>Evénements</li>
-            </a><a href="">
-                <li>Déconnexion</li>
-            </a></ul>
+            </a>
+                <a href=""><li id="deconnexion">Déconnexion</li></a>
+            </ul>
     </nav>
     <div class="container">
 
         <div class="grp1">
+        <form id="form" action="../addEvent.php" method="post" enctype="multipart/form-data">
             <input type="text" name="titreevent" id="titreevent" placeholder="Titre de l'évènement">
             <div class="zone-image">
                 <img id="picture" src="http://placehold.it/180" alt="your image" />
-                <input type='file'id="pictureToGet" onchange="readURL(this);" />
+                <input type='file' name="pic"id="pictureToGet" onchange="readURL(this);" />
             </div>
-            <textarea class="content description" id="description" name="example"></textarea>
+            <textarea class="content description" id="description" name="description"></textarea>
             <div class="lesdates">
             <span>Date début :</span><input type="date" name="datedeb" id="datedeb"><span>Date Fin :</span>
                 <input type="date" name="datefin" id="datefin">
             </div>
             
         </div>
-        <button id="addEvent"> ajout </button>
-</div>
+        <button id="addEvent" type="submit"> ajout </button>
+    </div>
+    </form>
     <script type="text/javascript" src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
     <script src="../scripts/gestionevent.js"></script>
     <script src="../libs/jquery.richtext.js"></script>
+    <script src="../scripts/deconnexion.js"></script>
     <script>
         $(document).ready(function () {
             $('.content').richText();

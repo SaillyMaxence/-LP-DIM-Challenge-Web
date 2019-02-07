@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start(); 
+    if(!isset($_SESSION['user']))
+        header('Location: ../index.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +25,7 @@
     </div>
     <script src="../libs/jquery.js"></script>
     <script src="../index.js"></script>
+    <script src="../scripts/deconnexion.js"></script>
 </body>
 
 </html>

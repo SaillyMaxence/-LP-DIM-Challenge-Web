@@ -1,4 +1,19 @@
 $(function () {
+    $.ajax({
+        type: "POST",
+        url: "../controler/showRights.php",
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+            $.each(data, function(i, item) {
+                $("#rights").append(
+                    "<input type='checkbox' value=" + item.RightId + " name=" + item.RightType + ">",
+                    "<label for=" + item.RightType + ">" + item.RightType + "</label><br>"
+                );
+            });
+        }
+    });
+
     var add = document.getElementById("addUser");
 
     add.addEventListener("click", addNewUser);
@@ -14,7 +29,6 @@ $(function () {
 
         } else {
             //            var data = [username];
-
             $.ajax({
                 type: "POST",
                 data: {
@@ -26,8 +40,6 @@ $(function () {
 
                 }
             });
-
         }
-
     }
 });
