@@ -47,7 +47,7 @@ nav ul a {
 
 nav ul li {
   display: inline-block;
-  width: 33%;
+  width: 24%;
   text-align: center;
 }
 
@@ -129,7 +129,8 @@ button:hover {
 .grp2 {
   background: #f2f2f2;
   width: 100%;
-  padding-top: 20px;
+  text-align: center;
+  margin-top: -150px;
 }
 
 .grp1 {
@@ -195,7 +196,7 @@ input[type=file] {
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 80%;
+  bottom: 15%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -258,5 +259,11 @@ input[type=file] {
   margin: auto;
   float: none;
   width: auto;
+}
+
+.submit {
+  width: 300px;
+  border-radius: 25px;
+  margin: auto;
 }
 /*# sourceMappingURL=style.css.map */
