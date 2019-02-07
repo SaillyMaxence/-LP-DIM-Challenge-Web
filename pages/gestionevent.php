@@ -20,7 +20,7 @@
             </a><a href="evenement.php">
                 <li>Evénements</li>
             </a>
-                <a><li id="deconnexion">Déconnexion</li></a>
+                <a href=""><li id="deconnexion">Déconnexion</li></a>
             </ul>
     </nav>
     <div class="container">
