@@ -6,7 +6,8 @@
     <title>Affichage</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../libs/responsiveslides.css">
-    <script src="../libs/jquery.js"></script>
+    <script type="text/javascript" src="../libs/jquery.js"></script>
+    <script type="text/javascript" src="../scripts/affichages.js"></script>
     <script type="text/javascript" src="../libs/responsiveslides.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
     <script>
@@ -28,13 +29,12 @@
             <li>
                 <div class="ecran">
                     <h1>OUI</h1>
-                    <div class="annonce"><div class="photo">salu</div>
-                    <div class="description">ca va</div></div>
+                    <div class="annonce">
+                    <div id="photo"><img src="../src/image/iut_logo.png" alt=""></div>
+                    <div id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate eaque saepe maiores nobis omnis earum non beatae fuga harum assumenda, sequi magnam quam eos reprehenderit maxime accusantium aspernatur modi optio.</div></div>
                 </div>
             </li>
-
         </ul>
     </div>
 </body>
-
 </html>
