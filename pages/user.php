@@ -28,6 +28,7 @@
     <script src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/tabulator/dist/js/tabulator.min.js"></script>
     <script src="../scripts/user.js"></script>
+    <script src="../scripts/deconnexion.js"></script>
 </body>
 
 </html>

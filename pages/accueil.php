@@ -21,6 +21,7 @@
     </div>
     <script src="../libs/jquery.js"></script>
     <script src="../index.js"></script>
+    <script src="../scripts/deconnexion.js"></script>
 </body>
 
 </html>

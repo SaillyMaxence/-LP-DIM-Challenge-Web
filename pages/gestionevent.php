@@ -44,6 +44,7 @@
     <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
     <script src="../scripts/gestionevent.js"></script>
     <script src="../libs/jquery.richtext.js"></script>
+    <script src="../scripts/deconnexion.js"></script>
     <script>
         $(document).ready(function () {
             $('.content').richText();
