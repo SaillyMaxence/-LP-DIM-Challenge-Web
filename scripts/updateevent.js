@@ -80,7 +80,8 @@ $(function () {
                     datefin = datefin.split(' ')[0];
                     $("#datefin").val(formatDate(datefin));
                     $("#eventid").val(item.EventId);
-                    $("#picture").attr("src", item.photo);
+                    if(item.photo != '')
+                        $("#picture").attr("src", item.photo);
                 });
             }
         });
