@@ -35,7 +35,6 @@
         </div> <div class="grp2">
             <button id="addEvent" type="submit" class="submit"> Modifier </button>
         </div>
-        <button id="addEvent" type="submit"> Modifier </button>
     </div>
     </form>
     <script type="text/javascript" src="../libs/jquery.js"></script>
