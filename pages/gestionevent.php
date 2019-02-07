@@ -34,7 +34,7 @@
             </div>
             <textarea class="content description" id="description" name="example"></textarea>
             <div class="lesdates">
-            <span>Date début :</span><input type="date" name="datedeb" id="datedeb"> <span>Date Fin :</span>
+            <span>Date début :</span><input type="date" name="datedeb" id="datedeb"><span>Date Fin :</span>
                 <input type="date" name="datefin" id="datefin">
             </div>
             
