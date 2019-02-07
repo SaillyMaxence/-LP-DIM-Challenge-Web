@@ -42,7 +42,7 @@
             </div>
             
         </div>
-        <button id="addEvent" type="submit"> ajout </button>
+        <button id="addEvent" type="submit"> Ajouter </button>
     </div>
     </form>
     <script type="text/javascript" src="../libs/jquery.js"></script>
