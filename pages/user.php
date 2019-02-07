@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Challenge web - Evénements</title>
+    <title>Challenge web - Utilisateurs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
     <link rel="stylesheet" type="text/css" href="../libs\font-awesome\css\font-awesome.min.css">
@@ -18,15 +18,15 @@
             <ul><a href=""><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href=""><li>Déconnexion</li></a></ul>
         </nav>
         <div class="grp1">
-        <div id="example-table"></div>
-<br>
-           <a href="gestionevent.php" id="newevent">Nouvel événement</a>
+	        <div id="example-table"></div>
+			<br>
+        	<a href="#" id="newevent">Nouvel utilisateur</a>
         </div>
 
     </div>
     <script src="../libs/jquery.js"></script>
     <script type="text/javascript" src="../libs/tabulator/dist/js/tabulator.min.js"></script>
-    <script src="../scripts/evenement.js"></script>
+    <script src="../scripts/user.js"></script>
 </body>
 
 </html>
