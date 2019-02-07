@@ -8,7 +8,6 @@
     <title>Challenge web</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
-    <link rel="stylesheet" type="text/css" href="../libs/datatable/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="../libs\font-awesome\css\font-awesome.min.css">
     <link rel="stylesheet" href="../libs/richtext.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
@@ -21,7 +20,7 @@
             </a><a href="evenement.php">
                 <li>Evénements</li>
             </a><a href="">
-                <li>Deconnection</li>
+                <li>Déconnexion</li>
             </a></ul>
     </nav>
     <div class="container">
