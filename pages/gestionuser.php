@@ -26,6 +26,11 @@
             <div class="grp1">
                 <label for="username">ID utilisateur LDAP</label>
                 <input type="text" name="username" id="username">
+                <div id="rights">
+                    Rôles:
+                    <br>
+                    <!-- Roles will be shown here as checkboxes -->
+                </div>
                 <div class="zone-image">
                     <img id="picture" src="http://placehold.it/180" alt="your image" />
                     <input type='file'id="pictureToGet" onchange="readURL(this);" />
