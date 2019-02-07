@@ -81,8 +81,10 @@ $(function () {
                     datefin = datefin.split(' ')[0];
                     $("#datefin").val(formatDate(datefin));
                     $("#eventid").val(item.EventId);
-                    if(item.photo != '')
+                    if(item.photo != '') {
+                        $("#imgpresent").val("true");
                         $("#picture").attr("src", item.photo);
+                    }
                 });
             }
         });

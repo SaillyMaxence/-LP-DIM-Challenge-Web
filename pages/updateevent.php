@@ -24,6 +24,7 @@
             <div class="zone-image">
                 <img id="picture" src="http://placehold.it/180" alt="your image" />
                 <input type='file' name="pic"id="pictureToGet" onchange="readURL(this);" />
+                <input type="hidden" name="imgpresent" id="imgpresent" value="false">
             </div>
             <textarea class="content description" id="description" name="description"></textarea>
             <div class="lesdates">
