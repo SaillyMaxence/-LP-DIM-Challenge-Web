@@ -198,6 +198,9 @@ input[type=file] {
     width: 100%;
     height: 100%;
     position: relative;
+    #rslides1_s0 {
+        height: 100%;
+    }
     .rslides {
         width: 100%;
         height: 100%;
@@ -207,18 +210,31 @@ input[type=file] {
             width: 100%;
             height: 100%;
             position: relative;
-            text-align: center; 
+            text-align: center;
             h1 {
+                margin: 0;
+                padding-top: 5%;
+                padding-bottom: 5%;
                 font-size: 64px;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
-                
             }
             .annonce {
                 width: 100%;
+                text-align: center;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
                 .photo,
                 .description {
-                    display: inline-block;
                     width: 49%;
+                    text-align: center;
+                    height: 100%;
+                    img {
+                        display: block;
+                        margin: auto;
+                        float: none;
+                        width: auto;
+                    }
                 }
             }
         }
