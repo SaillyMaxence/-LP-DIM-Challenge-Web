@@ -1,11 +1,13 @@
 <?php
 var_dump($_POST);
+var_dump($_FILES);
 require("../includes/database_inc.php");
 $path = '../src/image/'; // upload directory
 
-if(!isset($_FILES['pic'])){
+if(($_FILES['pic']["error"] == 0)){
 	if(!empty($_POST['titreevent']) || !empty($_POST['description']) || !empty($_POST['datedeb']) || !empty($_POST['datefin']) || !empty($_FILES['pic']))
 	{
+	echo "avec image";
 	$img = $_FILES['pic']['name'];
 	$tmp = $_FILES['pic']['tmp_name'];
 	
