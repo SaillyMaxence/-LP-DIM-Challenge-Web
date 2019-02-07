@@ -2,9 +2,13 @@ $(function() {
    
    getEvent();
    
-   $("body").on("click","#supprimer", function(){
+    $("body").on("click","#supprimer", function(){
         deleteEvent(this.getAttribute("data-id"));
-   });
+    });
+
+    $("body").on("click", "#modification", function() {
+        window.location = "updateevent.php?id=" + this.getAttribute("data-id");
+    });
 
 
 function getEvent(){
@@ -17,7 +21,7 @@ function getEvent(){
 
             for(var i = 0;i<dateLength ; i++){
                 
-                data[i].buttonModif = '<button id="modification" data-id="'+ data[i].EventId +'">Modification <i class="fa fa-pencil    "/></button>';
+                data[i].buttonModif = '<button id="modification" data-id="'+ data[i].EventId +'">Modification <i class="fa fa-pencil"/></button>';
                 data[i].buttonDelete = '<button id="supprimer" data-id="'+ data[i].EventId +'">Supprimer</button>';
                 
             }
@@ -34,6 +38,9 @@ function getEvent(){
                     {title:"Date de début", field:"EventDateDebut"},
                     {title:"Date de fin", field:"EventDateFin"},
                     {title:"Actif", field:"EventIsActiv"},
+                    {title:"Photo", field:"photo", formatter:"image", formatterParams:{
+                        width:"100%"
+                    }},
                     {title:"", field:"buttonModif", formatter:"html"},
                     {title:"", field:"buttonDelete",formatter:"html"},
                 ],

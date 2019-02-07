@@ -45,8 +45,16 @@ function loginElement(){
             dataType: "json",
             success: function(json) {
                 if(json == "true"){
-                    document.location.href="pages/accueil.php";
-                }else{
+                    document.location.href="pages/evenement.php";
+                }
+                else if(json == "badRight")
+                {
+                    alertElement.style.display = "block";
+                    alertLabelElement.innerHTML = "Vous n'avez les droits";
+                    var loginElement = document.getElementById("login");
+                    loginElement.setAttribute("style","height:250px;");
+                }
+                else{
                     alertElement.style.display = "block";
                     alertLabelElement.innerHTML = "Nom d'utilisateur ou mot de passe incorrect";
                     var loginElement = document.getElementById("login");

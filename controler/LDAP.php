@@ -39,7 +39,7 @@
 			if($this->_con)
             {
 				    $basedn = "ou=Groups,dc=iutcb,dc=univ-littoral,dc=fr";
-                    $filter = "(&(memberuid=".$user.")(cn=enseigant))";
+                    $filter = "(&(memberuid=".$user.")(cn=enseignant))";
                     $recherchegroupe = ldap_search($this->_con, $basedn, $filter,array("memberuid"));
                     $resultatgroupe = ldap_get_entries($this->_con,$recherchegroupe);
                     if($resultatgroupe['count'] > 0)

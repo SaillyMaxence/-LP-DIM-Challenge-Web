@@ -27,6 +27,10 @@
             <div class="grp1">
                 <label for="username">ID utilisateur LDAP</label>
                 <input type="text" name="username" id="username">
+                <div id="usercheck">
+                    <input type="button" id="btncheck" value="Vérifier l'utilisateur">
+                    <div id="err"></div>
+                </div>
                 <div id="rights">
                     Rôles:
                     <br>

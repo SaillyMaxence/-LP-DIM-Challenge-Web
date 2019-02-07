@@ -16,7 +16,7 @@ if(isset($_POST["login"]) && isset($_POST["pass"])){
     if($con) // If connexion Server ldap is true
     {
         /// if user exist with this password AND verify if user belongs of a specific group
-        if($ldap->VerifUserGroup($loginUser,$passwordUser,"lpdim")) 
+        if($ldap->VerifUserGroup($loginUser,$passwordUser,"enseignant") || $ldap->VerifUserGroup($loginUser,$passwordUser,"lpdim")) 
         {
             // The query requete SQL, SELECT user where userName is user login
             $query= "SELECT * FROM users WHERE UserName=:UserName"; 
@@ -29,7 +29,7 @@ if(isset($_POST["login"]) && isset($_POST["pass"])){
                 $return = json_encode("true"); // create fromat json of true
                 $_SESSION["user"] = $loginUser; // create session user with login user
             }else
-                $return = json_encode("false"); // create fromat json of false
+                $return = json_encode("badRight"); // create fromat json of false
 
             echo $return;
             
