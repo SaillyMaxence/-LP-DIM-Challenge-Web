@@ -10,15 +10,15 @@ $(function() {
 function getEvent(){
     $.ajax({
         type: "POST",
-        url: "../controler/showEvent.php",
+        url: "../controler/showUser.php",
         dataType: "json",
         success: function(data) {
             var dateLength =  data.length;
 
             for(var i = 0;i<dateLength ; i++){
                 
-                data[i].buttonModif = '<button id="modification" data-id="'+ data[i].EventId +'">Modification <i class="fa fa-pencil    "/></button>';
-                data[i].buttonDelete = '<button id="supprimer" data-id="'+ data[i].EventId +'">Supprimer</button>';
+                data[i].buttonModif = '<button id="modification" data-id="'+ data[i].UserId +'">Modification <i class="fa fa-pencil    "/></button>';
+                data[i].buttonDelete = '<button id="supprimer" data-id="'+ data[i].UserId +'">Supprimer</button>';
                 
             }
             var dataList = data;
@@ -28,12 +28,9 @@ function getEvent(){
                 data:dataList, //assign data to table
                 layout:"fitColumns", //fit columns to width of table (optional)
                 columns:[ //Define Table Columns
-                    {title:"Id", field:"EventId", width:15},
-                    {title:"Titre", field:"EventTitre",},
-                    {title:"Description", field:"EventMessage"},
-                    {title:"Date de début", field:"EventDateDebut"},
-                    {title:"Date de fin", field:"EventDateFin"},
-                    {title:"Actif", field:"EventIsActiv"},
+                    {title:"Id", field:"UserId", width:15},
+                    {title:"Nom d'utilisateur", field:"UserName",},
+                    {title:"Photo de profil", field:"UserProfilePicture"},
                     {title:"", field:"buttonModif", formatter:"html"},
                     {title:"", field:"buttonDelete",formatter:"html"},
                 ],
@@ -53,7 +50,7 @@ function deleteEvent(id){
     $.ajax({
         type: "POST",
         data:{id : id},
-        url: "../controler/deleteEvent.php",
+        url: "../controler/deleteUser.php",
         dataType: "json",
         success: function(data) {
             getEvent();
