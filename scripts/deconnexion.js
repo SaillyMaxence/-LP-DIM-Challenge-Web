@@ -1,7 +1,7 @@
 $("#deconnexion").click(function(){
     $.post("../controler/deconnexion.php",
 	  {
-			message: "deco",
+			deconnexion: "deco",
 	  },
 	  function(data, status){
             document.location.href="../index.php";
