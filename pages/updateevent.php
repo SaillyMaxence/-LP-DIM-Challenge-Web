@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<nav><ul><a href="affichage.php" target="_blank"><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href="user.php"><li>Admnistration</li></a><a href=""><li id="deconnexion">Déconnexion</li></a></ul></nav>
+<nav><ul><a href="affichage.php" target="_blank"><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href="user.php"><li>Administration</li></a><a href=""><li id="deconnexion">Déconnexion</li></a></ul></nav>
     <div class="container">
 
         <div class="grp1">
@@ -24,6 +24,7 @@
             <div class="zone-image">
                 <img id="picture" src="http://placehold.it/180" alt="your image" />
                 <input type='file' name="pic"id="pictureToGet" onchange="readURL(this);" />
+                <input type="hidden" name="imgpresent" id="imgpresent" value="false">
             </div>
             <textarea class="content description" id="description" name="description"></textarea>
             <div class="lesdates">
@@ -34,7 +35,6 @@
         </div> <div class="grp2">
             <button id="addEvent" type="submit" class="submit"> Modifier </button>
         </div>
-        <button id="addEvent" type="submit"> Modifier </button>
     </div>
     </form>
     <script type="text/javascript" src="../libs/jquery.js"></script>

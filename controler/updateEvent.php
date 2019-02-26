@@ -58,18 +58,32 @@ if($_FILES['pic']['error'] == 0){
 	$isActif = 1;
 	$photo = "";
 	try {
-		// Preparing the update request
-		$request = $db->prepare("UPDATE Events SET EventTitre = :title, EventMessage = :message, EventDateDebut = :start, EventDateFin = :end, EventIsActiv = :isActivEvent, photo = :photo WHERE EventId = :id");
-		// Firing the request with some values binding
-		$request->execute(array(
-			':title' => $title,
-			':message' => $message,
-			':start' => $start,
-			':end' => $end,
-			':isActivEvent' => $isActif,
-			':photo' => $photo,
-			':id' => $id
-		));
+		if ($_POST["imgpresent"]) { // If there was an image on the event
+			// Preparing the update request
+			$request = $db->prepare("UPDATE Events SET EventTitre = :title, EventMessage = :message, EventDateDebut = :start, EventDateFin = :end, EventIsActiv = :isActivEvent WHERE EventId = :id");
+			// Firing the request with some values binding
+			$request->execute(array(
+				':title' => $title,
+				':message' => $message,
+				':start' => $start,
+				':end' => $end,
+				':isActivEvent' => $isActif,
+				':id' => $id
+			));
+		} else { // If there was no image on the event
+			// Preparing the update request
+			$request = $db->prepare("UPDATE Events SET EventTitre = :title, EventMessage = :message, EventDateDebut = :start, EventDateFin = :end, EventIsActiv = :isActivEvent, photo = :photo WHERE EventId = :id");
+			// Firing the request with some values binding
+			$request->execute(array(
+				':title' => $title,
+				':message' => $message,
+				':start' => $start,
+				':end' => $end,
+				':isActivEvent' => $isActif,
+				':photo' => $photo,
+				':id' => $id
+			));
+		}
 	} catch (Exception $e) { // If there was an error while deleting
 		throw $e; // Display it
 	}
