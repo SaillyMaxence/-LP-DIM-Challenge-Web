@@ -1,7 +1,8 @@
 <?php require "../includes/header.php"?>
         <div class="grp1">
-	        <div id="example-table"></div>
+	        <div id="table"></div>
 			<br>
         	<a href="gestionuser.php" id="newevent">Nouvel utilisateur</a>
-        </div>
+	</div>
+<script src="../scripts/user.js"></script>
 <?php require "../includes/footer.php" ?>

@@ -2,16 +2,13 @@ $(function() {
 console.log("oui");
 if((document.getElementById("connexion")) != null){
 var buttonLoginElement = document.getElementById("connexion");
-var closeAlertElement = document.getElementById("closeAlert");
-console.log("in");
 buttonLoginElement.addEventListener("click",loginElement);
-closeAlertElement.addEventListener( "click",closeAlert);
 }
 
 
 
 function loginElement(){
-console.log("test");
+
 
     var login = document.getElementById("user");
     var pass  = document.getElementById("password");
@@ -35,7 +32,6 @@ console.log("test");
         } 
     }else{
         // appel ajax
-        console.log("teeeeeeeeest");
         $.ajax({
     		type: "POST",
             url: "./controler/setConnexion.php",
@@ -45,7 +41,10 @@ console.log("test");
             },
             dataType: "json",
             success: function(json) {
-                if(json == "true"){
+                console.log(json);
+                if(json.return == "true"){
+                    sessionStorage.setItem("username",json.UserName);
+                    sessionStorage.setItem("isAdmin", json.UserRole);
                     document.location.href="pages/evenement.php";
                 }
                 else if(json == "badRight")

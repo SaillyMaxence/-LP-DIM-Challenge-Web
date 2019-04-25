@@ -94,7 +94,7 @@ function insertMessage(){
                             alertMessageElement.innerHTML ="Message bien inseré";
                             alertElement.style.display ="block";
                             
-                            setTimeout(function(){ document.location.href="/pages/evenement.php" }, 5000);
+                            setTimeout(function(){ document.location.href="./pages/evenement.php" }, 5000);
                             
                         }
                     }

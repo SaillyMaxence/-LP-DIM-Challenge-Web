@@ -104,5 +104,5 @@
   </div>
 </div>           
    
-
+<script src="../scripts/evenement.js"></script>
 <?php require "../includes/footer.php" ?>

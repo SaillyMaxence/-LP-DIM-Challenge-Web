@@ -8,10 +8,6 @@ if(isset($_POST["login"]) && isset($_POST["pass"])){
     $loginUser = $_POST["login"]; // GET LOGIN
     
     $passwordUser = $_POST["pass"]; // GET PASSWORD
-                $return = json_encode("true"); // create fromat json of true
-                $_SESSION["user"] = $loginUser; // create session user with login user
-                echo $return; // json data
-               
 
     $ldap = new LDAP(); // Create new Object LDAP
 
@@ -30,7 +26,10 @@ if(isset($_POST["login"]) && isset($_POST["pass"])){
             $data=$stmt->fetch(); // Get first value in response of sql server
             if($data['UserName'] == $loginUser) // if this response equal user login
             {
-                $return = json_encode("true"); // create fromat json of true
+                $return['return'] = "true";
+                $return['UserName'] = $data['UserName'];
+                $return['UserRole'] = $data['UserRole'];
+                $return = json_encode($return); // create fromat json of true
                 $_SESSION["user"] = $loginUser; // create session user with login user
             }else
                 $return = json_encode("badRight"); // create fromat json of false

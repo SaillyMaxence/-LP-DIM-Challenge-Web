@@ -1,6 +1,6 @@
 <?php
 $addEventRequest = "INSERT INTO Events (EventTitre, EventMessage, EventDateDebut, EventDateFin,EventPriority,EventVisibility,EventCreator) VALUES (:title, :message, :start, :end,:priority,:visibility,:creator)";
-$addUserRequest = "INSERT INTO Users (UserName,UserRole) VALUES (:username,:role)";
+$addUserRequest = "INSERT INTO Users (UserName,UserRole) VALUES (:username,0)";
 $deleteEventRequest = "DELETE FROM Events WHERE EventId = :id";
 $deleteUserRequest = "DELETE FROM Users WHERE UserId = :id";
 $selectEventRequest = "SELECT * FROM Events WHERE EventDateDebut <=now() and EventDateFin>=now() order by EventPriority desc";

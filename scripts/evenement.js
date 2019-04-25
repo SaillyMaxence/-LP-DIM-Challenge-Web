@@ -12,9 +12,19 @@ function loadData(){
         success: function(data) {
         //    console.log(data);
             for(var i = 0;i<data.length ; i++){
+                if(sessionStorage.getItem("isAdmin") == 0){
+                    if(sessionStorage.getItem("username") == data[i].EventCreator){
+                        data[i].buttonModif = '<button  data-id="'+ data[i].EventId+'" class="btn btn-secondary update">Modifier</button>';
+                        data[i].buttonDelete = '<button data-id="'+ data[i].EventId+'" class="btn btn-secondary delete">Supprimer</button>';
+                    }else{
+                        data[i].buttonModif = '<i>';
+                        data[i].buttonDelete = '<i>';
+                    }
+                }else{
+                    data[i].buttonModif = '<button  data-id="'+ data[i].EventId+'" class="btn btn-secondary update">Modifier</button>';
+                    data[i].buttonDelete = '<button data-id="'+ data[i].EventId+'" class="btn btn-secondary delete">Supprimer</button>';
+                }
                 
-                data[i].buttonModif = '<button  data-id="'+ data[i].EventId+'" class="btn btn-secondary update  ">Modifier</button>';
-                data[i].buttonDelete = '<button data-id="'+ data[i].EventId+'" class="btn btn-secondary delete ">Supprimer</button>';
                 
             }
             var dataList = data;
@@ -46,9 +56,12 @@ function loadData(){
                },{once:true})
            }
            var updateElement = document.getElementsByClassName("update");
+           console.log(updateElement);
            for(var k=0;k<data.length;k++){
+               console.log(k);
                updateElement[k].addEventListener("click",function(){
                    var id = this.getAttribute("data-id");
+                   console.log(id);
                    updateMessage(id);
                },{once:true})
            }
@@ -91,6 +104,7 @@ function deleteMessage(id){
 
 
 function updateMessage(id){
+    console.log("in");
     let titleElement = document.getElementById("titleEvent");
     let messageElement = document.getElementById("messageEvent");
     let dateStartElement = document.getElementById("dateStart");

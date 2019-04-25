@@ -9,13 +9,14 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Challenge web - Gestionnaire d'utilisateurs</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../libs\font-awesome\css\font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" type="text/css" href="../libs\font-awesome\css\font-awesome.min.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="../libs/bootstrap-4.3.1-dist/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="../libs/jquery-ui-1.12.1.custom/jquery-ui.min.css">
         <link rel="stylesheet" type="text/css" href="../libs/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css">
         <link rel="stylesheet" type="text/css" href="../libs/tabulator/dist/css/tabulator.min.css">
         <link rel="stylesheet" type="text/css" href="../libs/DataTables-1.10.18/css/dataTables.foundation.min.css">
+        <script type="text/javascript" src="../libs/jquery.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">

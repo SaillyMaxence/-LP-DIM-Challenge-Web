@@ -1,7 +1,7 @@
 <?php
 $host = "localhost"; // Server/database host
-$dbname = "web_challenge"; // Database name
-$login = "tutur"; // Database login
+$dbname = "web_challenger"; // Database name
+$login = "root"; // Database login
 $pwd = ""; // Database password
  // Database charset
 

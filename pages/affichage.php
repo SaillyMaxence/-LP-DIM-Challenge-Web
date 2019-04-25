@@ -205,7 +205,7 @@
     </div>
 
 
-
+    <script src="../scripts/affichage.js"></script>
     <script>
         var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             fox = "The quick brown fox jumps over the lazy dog",

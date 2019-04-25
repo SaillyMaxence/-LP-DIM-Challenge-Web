@@ -18,10 +18,10 @@ $startDate =  date('d-m-Y H:i', $startDate);
 $response[0]['EventDateDebut'] = $startDate;
 
 
-$endDate = $response[0]['EventEndDate'];
+$endDate = $response[0]['EventDateFin'];
 $endDate = strtotime($endDate);
 $endDate =  date('d-m-Y H:i', $endDate);
-$response[0]['EventEndDate'] = $endDate;
+$response[0]['EventDateFin'] = $endDate;
 
 echo json_encode($response);
 

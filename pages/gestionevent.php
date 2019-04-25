@@ -70,4 +70,5 @@
       </div>
    </div>
 </div>
+<script src="../scripts/gestionevent.js"></script>
 <?php require "../includes/footer.php"; ?>

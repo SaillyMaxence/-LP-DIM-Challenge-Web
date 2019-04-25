@@ -4,7 +4,7 @@ require("../includes/requetes.php");
 include("LDAP.php");
 
 // Grabbing data from the form
-$username = $_POST["username"];
+$username = $_POST["user"];
 
 $ldap = new LDAP(); // Create new Object LDAP
 $con = $ldap->Connexion("10.10.28.101",389); // Connexion server LDAP
