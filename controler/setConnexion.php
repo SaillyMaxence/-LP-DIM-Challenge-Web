@@ -1,13 +1,17 @@
 <?php
 session_start();
 require("../includes/database_inc.php");
+require("../includes/requetes.php");
 include "LDAP.php";
 
 if(isset($_POST["login"]) && isset($_POST["pass"])){
-   
     $loginUser = $_POST["login"]; // GET LOGIN
-
+    
     $passwordUser = $_POST["pass"]; // GET PASSWORD
+                $return = json_encode("true"); // create fromat json of true
+                $_SESSION["user"] = $loginUser; // create session user with login user
+                echo $return; // json data
+               
 
     $ldap = new LDAP(); // Create new Object LDAP
 
@@ -15,7 +19,7 @@ if(isset($_POST["login"]) && isset($_POST["pass"])){
 
     if($con) // If connexion Server ldap is true
     {
-        /// if user exist with this password AND verify if user belongs of a specific group
+        //if user exist with this password AND verify if user belongs of a specific group
         if($ldap->VerifUserGroup($loginUser,$passwordUser,"enseignant") || $ldap->VerifUserGroup($loginUser,$passwordUser,"lpdim")) 
         {
             // The query requete SQL, SELECT user where userName is user login

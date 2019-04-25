@@ -1,5 +1,6 @@
 <?php
 require("../includes/database_inc.php");
+require("../includes/requetes.php");
 include("LDAP.php");
 
 // Grabbing data from the form
@@ -20,7 +21,7 @@ if($con) { // If connexion Server ldap is tru
 
 			if($request->rowCount() == 0) { // Checking if there is nothing in the request
 				// Preparing the insert/add request
-			   	$request = $db->prepare("INSERT INTO Users (UserName) VALUES (:username)");
+			   	$request = $db->prepare($addUserRequest);
 				// Firing the request with some values binding
 				$request->execute(array(
 					':username' => $username

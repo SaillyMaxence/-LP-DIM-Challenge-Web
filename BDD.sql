@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `events`
 --
 
-CREATE TABLE `events` (
+CREATE TABLE `EVENTS` (
   `EventId` int(10) NOT NULL,
   `EventTitre` varchar(64) DEFAULT NULL,
   `EventMessage` varchar(512) DEFAULT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `events` (
 -- Déchargement des données de la table `events`
 --
 
-INSERT INTO `events` (`EventId`, `EventTitre`, `EventMessage`, `EventDateDebut`, `EventDateFin`, `EventIsActiv`, `photo`) VALUES
+INSERT INTO `EVENTS` (`EventId`, `EventTitre`, `EventMessage`, `EventDateDebut`, `EventDateFin`, `EventIsActiv`, `photo`) VALUES
 (21, NULL, NULL, NULL, NULL, NULL, ''),
 (22, 'test', 'test', '2019-02-01 00:00:00', '2019-02-01 00:00:00', 1, ''),
 (23, 'test', '<div>testjkaezjkrkjr</div>', '2019-02-08 00:00:00', '2019-02-26 00:00:00', NULL, ''),
@@ -57,7 +57,7 @@ INSERT INTO `events` (`EventId`, `EventTitre`, `EventMessage`, `EventDateDebut`,
 -- Structure de la table `rights`
 --
 
-CREATE TABLE `rights` (
+CREATE TABLE `RIGHTS` (
   `RightId` int(10) NOT NULL,
   `RightType` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -68,7 +68,7 @@ CREATE TABLE `rights` (
 -- Structure de la table `userrights`
 --
 
-CREATE TABLE `userrights` (
+CREATE TABLE `USERRIGHTS` (
   `UserRightId` int(10) NOT NULL,
   `RightId` int(10) DEFAULT NULL,
   `UserId` int(10) NOT NULL
@@ -80,7 +80,7 @@ CREATE TABLE `userrights` (
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `USERS` (
   `UserId` int(10) NOT NULL,
   `UserName` varchar(64) DEFAULT NULL,
   `UserProfilePicture` varchar(256) DEFAULT NULL
@@ -93,19 +93,19 @@ CREATE TABLE `users` (
 --
 -- Index pour la table `events`
 --
-ALTER TABLE `events`
+ALTER TABLE `EVENTS`
   ADD PRIMARY KEY (`EventId`);
 
 --
 -- Index pour la table `rights`
 --
-ALTER TABLE `rights`
+ALTER TABLE `RIGHTS`
   ADD PRIMARY KEY (`RightId`);
 
 --
 -- Index pour la table `userrights`
 --
-ALTER TABLE `userrights`
+ALTER TABLE `USERRIGHTS`
   ADD PRIMARY KEY (`UserRightId`),
   ADD KEY `FK_UserRights_RightId` (`RightId`),
   ADD KEY `FK_UserRights_UserId` (`UserId`);
@@ -113,7 +113,7 @@ ALTER TABLE `userrights`
 --
 -- Index pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `USERS`
   ADD PRIMARY KEY (`UserId`);
 
 --
@@ -123,25 +123,25 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT pour la table `events`
 --
-ALTER TABLE `events`
+ALTER TABLE `EVENTS`
   MODIFY `EventId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT pour la table `rights`
 --
-ALTER TABLE `rights`
+ALTER TABLE `RIGHTS`
   MODIFY `RightId` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `userrights`
 --
-ALTER TABLE `userrights`
+ALTER TABLE `USERRIGHTS`
   MODIFY `UserRightId` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `USERS`
   MODIFY `UserId` int(10) NOT NULL AUTO_INCREMENT;
 
 --
@@ -151,9 +151,9 @@ ALTER TABLE `users`
 --
 -- Contraintes pour la table `userrights`
 --
-ALTER TABLE `userrights`
-  ADD CONSTRAINT `FK_UserRights_RightId` FOREIGN KEY (`RightId`) REFERENCES `rights` (`RightId`),
-  ADD CONSTRAINT `FK_UserRights_UserId` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`);
+ALTER TABLE `USERRIGHTS`
+  ADD CONSTRAINT `FK_UserRights_RightId` FOREIGN KEY (`RightId`) REFERENCES `RIGHTS` (`RightId`),
+  ADD CONSTRAINT `FK_UserRights_UserId` FOREIGN KEY (`UserId`) REFERENCES `USERS` (`UserId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

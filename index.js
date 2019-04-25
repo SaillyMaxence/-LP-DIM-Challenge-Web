@@ -1,8 +1,9 @@
 $(function() {
-
-if((document.getElementById("connexion")) != null && (document.getElementById("closeAlert") != null)){
+console.log("oui");
+if((document.getElementById("connexion")) != null){
 var buttonLoginElement = document.getElementById("connexion");
 var closeAlertElement = document.getElementById("closeAlert");
+console.log("in");
 buttonLoginElement.addEventListener("click",loginElement);
 closeAlertElement.addEventListener( "click",closeAlert);
 }
@@ -10,7 +11,7 @@ closeAlertElement.addEventListener( "click",closeAlert);
 
 
 function loginElement(){
-
+console.log("test");
 
     var login = document.getElementById("user");
     var pass  = document.getElementById("password");
@@ -34,10 +35,10 @@ function loginElement(){
         } 
     }else{
         // appel ajax
-        
+        console.log("teeeeeeeeest");
         $.ajax({
     		type: "POST",
-            url: "controler/setConnexion.php",
+            url: "./controler/setConnexion.php",
             data: {
               login: login.value,
               pass : pass.value  

@@ -1,11 +1,11 @@
 <?php
 require("../includes/database_inc.php");
-
+require("../includes/requetes.php");
 // Grabbing the event's ID
 $id = $_POST["id"];
 try {
 	// Preparing the request to delete the event
-    $request = $db->prepare("DELETE FROM Users WHERE UserId = :id");
+    $request = $db->prepare($deleteUserRequest);
 
     // Binding values and firing the request
     $request->execute(array(

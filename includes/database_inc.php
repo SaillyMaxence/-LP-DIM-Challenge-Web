@@ -1,11 +1,11 @@
 <?php
 $host = "localhost"; // Server/database host
 $dbname = "web_challenge"; // Database name
-$login = "root"; // Database login
+$login = "tutur"; // Database login
 $pwd = ""; // Database password
-$charset = "utf8mb4"; // Database charset
+ // Database charset
 
-$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+$dsn = "mysql:host=$host;dbname=$dbname;";
 $options = [ // Set your PDO's attributes here
 	PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Attribute meant to catch errors
 ];

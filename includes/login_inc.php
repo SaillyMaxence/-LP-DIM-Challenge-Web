@@ -1,16 +1,10 @@
 <div id="login">
-     <div class="block">
-       
-        <label for="utilisateur">Nom d'utilisateur</label>
-        <input type="text" placeholder="Nom d'utilisateur" id="user" name="utilisateur" required>
-
-        <label for="password">Mot de passe</label>
-        <input type="password" placeholder="Mot de passe" id="password" name="password" required>
-        <div id="alert" >
-      
-        <p><span id="alertLabel"></span><span id="closeAlert" class="fa fa-close"></p></p>
-      
-      </div>
-      <button id="connexion">Se connecter</button>
+  <div class="wrapper">
+    <div class="form-signin">       
+      <h2 class="form-signin-heading">Identification</h2>
+      <input type="text" class="form-control" name="username" id="user" placeholder="Nom d'utilisateur" required="" autofocus="" />
+      <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe" required=""/>      
+      <button class="btn btn-lg btn-primary btn-block" id="connexion">Login</button>   
     </div>
+  </div>
 </div>

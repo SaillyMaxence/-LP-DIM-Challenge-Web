@@ -1,273 +1,68 @@
-html {
-  height: 100%;
-}
-
-body {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.container {
-  background-color: #0093d2;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-nav {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  height: 75px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 22px;
-  background-color: #0093d2;
-  -webkit-box-shadow: 0px 7px 23px -2px rgba(0, 0, 0, 0.35);
-  box-shadow: 0px 7px 23px -2px rgba(0, 0, 0, 0.35);
-  z-index: 2;
-}
-
-nav ul {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-nav ul a {
-  color: #fff;
-}
-
-nav ul li {
-  display: inline-block;
-  width: 24%;
-  text-align: center;
-}
-
-a {
-  text-decoration: none;
-}
-
-#login {
-  background-color: #FFF;
-  margin: 0 auto;
-  border: solid 1px gray;
-  padding: 2%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 310px;
-  height: 200px;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-}
-
-#login label {
-  font-family: Verdana, Helvetica;
-  font-size: 14px;
-}
-
-button {
-  background-color: #0093d2;
-  color: #f2f2f2;
-  padding: 14px 20px;
-  margin: 8px 0;
-  cursor: pointer;
-  width: 100%;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  border: solid 1px #0093d2;
-}
-
-button:hover {
-  background-color: #f2f2f2;
-  color: #0093d2;
-}
-
-.block input[type=text],
-.block input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-#alert {
-  border: red 1px solid;
-  background-color: #ff8080;
-  margin-bottom: 5px;
+/* The Modal (background) */
+.modal {
   display: none;
-}
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
 
-#alert #alertLabel {
-  font-family: Verdana, Helvetica;
-  font-size: 12px;
-  margin-left: 10px;
-  vertical-align: middle;
-  text-align: center;
+.boutonContent {
+  width: 100%;
+  text-align: center; }
+
+#validerUser {
+  background-color: green;
   color: white;
-  padding: 1%;
-}
+  padding: 5px; }
 
-#closeAlert {
-  float: right;
-  margin-right: 10px;
-  color: white;
-  margin-top: 2px;
-}
+#validerUser:hover {
+  opacity: 0.5; }
 
-.grp2 {
-  background: #f2f2f2;
-  width: 100%;
-  text-align: center;
-  margin-top: -150px;
-}
+#btncheck {
+  margin-right: 5px !important; }
 
-.grp1 {
-  height: 100%;
-  background: #f2f2f2;
-  width: 100%;
-  padding-top: 20px;
-}
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px; }
 
-.grp1 #newevent {
-  border: solid 1px #0093d2;
-  background-color: #0093d2;
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 21px;
-  font-family: Verdana;
-  color: white;
-  float: right;
-  margin-right: 25px;
-}
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 30px; }
+  .form-signin .checkbox {
+    font-weight: normal; }
+  .form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px; }
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
+  .form-signin input[type="password"] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
 
-img {
-  max-width: 400px;
-  max-height: 400px;
-}
-
-input[type=file] {
-  padding: 10px;
-  background-color: #FFF;
-  display: block;
-}
-
-#titreevent {
-  width: 33%;
-  margin: auto;
-  display: block;
-  position: relative;
-  height: 70px;
-  text-align: center;
-  font-size: 38px;
-  border: none;
-  margin-top: 30px;
-  border-radius: 25px;
-}
-
-.richText {
-  width: 50%;
-  float: right;
-  right: 10%;
-  position: absolute;
-  top: 20%;
-}
-
-.zone-image {
-  left: 10%;
-  top: 20%;
-  position: absolute;
-  text-align: center;
-}
-
-.lesdates {
-  display: inline-block;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: 15%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.affichage {
-  background-color: #FFF;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.affichage #rslides1_s0 {
-  height: 100%;
-}
-
-.affichage .rslides {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  max-width: 100% !important;
-}
-
-.affichage .rslides .ecran {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  text-align: center;
-}
-
-.affichage .rslides .ecran h1 {
-  margin: 0;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  font-size: 64px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.affichage .rslides .ecran .annonce {
-  width: 100%;
-  text-align: center;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.affichage .rslides .ecran .annonce .photo,
-.affichage .rslides .ecran .annonce .description {
-  width: 49%;
-  text-align: center;
-  height: 100%;
-}
-
-.affichage .rslides .ecran .annonce .photo img,
-.affichage .rslides .ecran .annonce .description img {
-  display: block;
-  margin: auto;
-  float: none;
-  width: auto;
-}
-
-.affichage .rslides .ecran .annonce .description {
-  font-size: 24px;
-}
-
-.submit {
-  width: 300px;
-  border-radius: 25px;
-  margin: auto;
-}
 /*# sourceMappingURL=style.css.map */

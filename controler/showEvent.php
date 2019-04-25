@@ -1,8 +1,8 @@
 <?php
 require("../includes/database_inc.php");
-
+require("../includes/requetes.php");
 // Preparing the request to grab everything from the event table
-$request = $db->prepare("SELECT * FROM Events");
+$request = $db->prepare($selectShowEventRequest);
 // Firing the request
 $request->execute();
 // Fetching data from the request

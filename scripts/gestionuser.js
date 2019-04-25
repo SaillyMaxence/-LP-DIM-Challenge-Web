@@ -14,13 +14,11 @@ $(function () {
         }
     });
 
-    var add = document.getElementById("addUser");
+   /* var add = document.getElementById("addUser");
 
     add.addEventListener("click", addNewUser);
 
     function addNewUser() {
-        console.log("clique");
-        var picture = document.getElementById("pictureToGet");
         var username = document.getElementById("username");
 
         var usernameElement = username.value;
@@ -48,7 +46,72 @@ $(function () {
                 }
             });
         }
-    }
+    }*/
+    
+    // -----------------------------------------------
+	// Clique sur le bouton d'ajout d'un utilisateur
+	// -----------------------------------------------
+	$("body").on("click","#addUser",function(){
+		var UserName = $('#username').val();
+		ajoutUtilisateur(UserName);
+	})
+    
+    
+    // ---------------------------------
+    // Fonction d'ajout d'un utilisateur
+    // ---------------------------------
+    
+    function ajoutUtilisateur(UserName)
+	{
+		$.ajax({
+			type : "POST",
+			url: "../controler/addUser.php",
+			datatype : "json",
+			data : { 
+					 user : UserName
+					},
+			success : function(data)
+			{
+			    if(data == 0) 
+			    // Si c'est un professeur
+			    // ----------------------
+			    { 
+                    var $modal = ($("<div id='idModal' class='modal'>"));
+                    $modal.append("<h2>Utilisateur ajouté</h2>");
+                    $modal.append("<div class='boutonContent'>");
+                    $(".boutonContent").append("<a id='validerUser' class='close'>Ok</a>");
+                    
+                    $(".close").click(function(){
+                        $modal.remove();  
+                    });
+				
+                }
+                else if (data == 1) 
+                // Si ce n'est pas un professeur
+                // -----------------------------
+                { 
+                        $("#err").css("color", "red"); 
+                        $("#err").text("Ce n'est pas un professeur !"); 
+                } 
+                else if (data == 2) 
+                // Si l'utilisateur a déja été créé
+                // --------------------------------
+                { 
+                        $("#err").css("color", "red");
+                        $("#err").text("L'utilisateur a déjà été ajouté"); 
+                }
+			    
+				// ----------------------------
+				// Remise à null du champ texte
+				// ----------------------------
+				$('#username').val(null);
+
+			}
+		});
+	}
+    
+    
+    
 
     $("#btncheck").click(function() {
         // Récup de l'username

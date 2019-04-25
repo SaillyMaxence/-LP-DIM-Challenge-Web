@@ -1,28 +1,20 @@
 $(function() {
-   
-   getEvent();
-   
-    $("body").on("click","#supprimer", function(){
-        deleteEvent(this.getAttribute("data-id"));
-    });
 
-    $("body").on("click", "#modification", function() {
-        window.location = "updateevent.php?id=" + this.getAttribute("data-id");
-    });
-
-
-function getEvent(){
+function loadData(){
+    var myDataTable = document.getElementById("example-table");
+    myDataTable.style.display="block";
+    var updateMessageElement = document.getElementById("updateMessage");
+    updateMessageElement.style.display="none";
     $.ajax({
         type: "POST",
         url: "../controler/showEvent.php",
         dataType: "json",
         success: function(data) {
-            var dateLength =  data.length;
-
-            for(var i = 0;i<dateLength ; i++){
+        //    console.log(data);
+            for(var i = 0;i<data.length ; i++){
                 
-                data[i].buttonModif = '<button id="modification" data-id="'+ data[i].EventId +'">Modification <i class="fa fa-pencil"/></button>';
-                data[i].buttonDelete = '<button id="supprimer" data-id="'+ data[i].EventId +'">Supprimer</button>';
+                data[i].buttonModif = '<button  data-id="'+ data[i].EventId+'" class="btn btn-secondary update  ">Modifier</button>';
+                data[i].buttonDelete = '<button data-id="'+ data[i].EventId+'" class="btn btn-secondary delete ">Supprimer</button>';
                 
             }
             var dataList = data;
@@ -37,40 +29,136 @@ function getEvent(){
                     {title:"Description", field:"EventMessage"},
                     {title:"Date de début", field:"EventDateDebut"},
                     {title:"Date de fin", field:"EventDateFin"},
-                    {title:"Actif", field:"EventIsActiv"},
-                    {title:"Photo", field:"photo", formatter:"image", formatterParams:{
-                        width:"100%"
-                    }},
+                    {title:"Priorité", field:"EventPriority"},
+                    {title:"Visibilité",field:"EventVisibility"},
+                    {title:"Créer par",field:"EventCreator"},
                     {title:"", field:"buttonModif", formatter:"html"},
-                    {title:"", field:"buttonDelete",formatter:"html"},
+                    {title:"", field:"buttonDelete",formatter:"html"}
                 ],
            });
+           
+           var deleteElement = document.getElementsByClassName("delete");
+           for(var j=0; j<deleteElement.length;j++){
+               deleteElement[j].addEventListener("click",function(){
+                   var id = this.getAttribute("data-id");
 
+                   deleteMessage(id);
+               },{once:true})
+           }
+           var updateElement = document.getElementsByClassName("update");
+           for(var k=0;k<data.length;k++){
+               updateElement[k].addEventListener("click",function(){
+                   var id = this.getAttribute("data-id");
+                   updateMessage(id);
+               },{once:true})
+           }
+           
+           
+        }
 
-
+    });
+}
+function deleteMessage(id){
+    console.log(id);
+    var exampleModalLabel = document.getElementById("exampleModalLabel").innerHTML = "Attention : ";
+    var modalBodyElement = document.getElementById("modalBody").innerHTML = "Êtes-vous sur de vouloirs supprimer ?";
+    $("#myModal").modal('show');
+    
+    var dismiss = document.getElementById("dismiss");
+        dismiss.addEventListener("click",function(){
+            $('#myModal').modal('hide');
+            loadData();
+        },{once:true})
         
-}
-
-
-
-});
-}
-
-function deleteEvent(id){
-    $.ajax({
+    var saveElement = document.getElementById("saveIt");
+    saveElement.addEventListener("click",function(){
+        console.log(id);
+         $.ajax({
         type: "POST",
-        data:{id : id},
+        data:{id:id},
         url: "../controler/deleteEvent.php",
         dataType: "json",
         success: function(data) {
-            getEvent();
-            Location.reload();
+           $('#myModal').modal('hide');
+           loadData();
         }
-    });
-
-
-
+             
+         });
+    },{once:true})
+    
+    
 }
+
+
+function updateMessage(id){
+    let titleElement = document.getElementById("titleEvent");
+    let messageElement = document.getElementById("messageEvent");
+    let dateStartElement = document.getElementById("dateStart");
+    let dateEndElement = document.getElementById("dateEnd");
+    let publicElement = document.getElementById("publicEvent");
+    let priorityElement = document.getElementById("priorityEvent");
+    
+    $.ajax({
+        type: "POST",
+        data:{id:id},
+        url: "../controler/getEventUpdate.php",
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+            var updateMessageElement = document.getElementById("updateMessage");
+            updateMessageElement.style.display="block";
+            var myDataTable = document.getElementById("example-table");
+            myDataTable.style.display="none";
+            
+            titleElement.value = data[0].EventTitre;
+            messageElement.innerHTML = data[0].EventMessage;
+            publicElement.value = data[0].EventVisibility;
+            priorityElement.value = data[0].EventPriority;
+            dateStartElement.value = data[0].EventDateDebut;
+            dateEndElement.value = data[0].EventDateFin
+                
+                }
+                
+            })
+            
+            $("#buttonForUpdate").on("click", function(e){
+                var titleElementToUpdate = titleElement.value;
+                var messageElementToUpdate = messageElement.value;
+                var publicElementToUpdate = publicElement.value;
+                var priorityElementToUpdate = priorityElement.value;
+                var dateStartElementToUpdate = dateStartElement.value;
+                var dateEndElementToUpdate = dateEndElement.value;
+                
+                $.ajax({
+                    type: "POST",
+                    data:
+                    {
+                    id:id,
+                    title : titleElementToUpdate,
+                    message : messageElementToUpdate,
+                    startDate:dateStartElementToUpdate,
+                    endDate:dateStartElementToUpdate,
+                    public : publicElementToUpdate,
+                    priority:priorityElementToUpdate,
+                    },
+                    url: "../controler/updateEvent.php",
+                    dataType: "json",
+                    success: function(data) {
+                        loadData();
+                        
+                        
+                    }
+                });
+            
+            
+        
+    });
+    
+    
+    
+    
+}
+loadData();
 
 
 });

@@ -1,8 +1,8 @@
 <?php
 require("../includes/database_inc.php");
-
+require("../includes/requetes.php");
 // Preparing the request to grab everything from the rights table
-$request = $db->prepare("SELECT * FROM Rights");
+$request = $db->prepare($selectRightsRequest);
 // Firing the request
 $request->execute();
 // Fetching data from the request

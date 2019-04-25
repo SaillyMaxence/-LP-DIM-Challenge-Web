@@ -1,56 +1,24 @@
-<?php session_start(); 
-    if(!isset($_SESSION['user']))
-        header('Location: ../index.php');
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Challenge web - Gestionnaire d'utilisateurs</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../libs\font-awesome\css\font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="../styles/style.css" />
-    </head>
-    <body>
-    <nav><ul><a href="affichage.php" target="_blank"><li>Affichage</li></a><a href="evenement.php"><li>Evénements</li></a><a href="user.php"><li>Administration</li></a><a href=""><li id="deconnexion">Déconnexion</li></a></ul></nav>
-        <div class="container">
-            <div class="grp1">
+<?php require "../includes/header.php"; ?>
+
+    <form class="form-inline">
+        <div class="form-group mb-2">
+            <label for="username">ID utilisateur LDAP</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div id="usercheck">
+            <button class="btn btn-secondary mb-2" id="btncheck">Vérifier l'utilisateur</button>
+        </div>
+            <button type="submit" id="addUser" class="btn btn-primary mb-2">Ajout de l'utilisateur</button>
+    </form>
+    <div id="err"></div>
+            <!--<div class="ajoutUser">
                 <label for="username">ID utilisateur LDAP</label>
                 <input type="text" name="username" id="username">
                 <div id="usercheck">
                     <input type="button" id="btncheck" value="Vérifier l'utilisateur">
                     <div id="err"></div>
                 </div>
-                <div id="rights">
-                    Rôles:
-                    <br>
-                    <!-- Roles will be shown here as checkboxes -->
-                </div>
-                <div class="zone-image">
-                    <img id="picture" src="http://placehold.it/180" alt="your image" />
-                    <input type='file'id="pictureToGet" onchange="readURL(this);" />
-                </div>
             </div>
-            <button id="addUser"> ajout </button>
-        </div>
-        <script type="text/javascript" src="../libs/jquery.js"></script>
-        <script type="text/javascript" src="../libs/momentjs/moment.min.js"></script>
-        <script src="../scripts/gestionuser.js"></script>
-        <script src="../scripts/deconnexion.js"></script>
-        <script>
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
+            <button id="addUser"> ajout </button> -->
             
-                    reader.onload = function (e) {
-                        $('#picture')
-                            .attr('src', e.target.result);
-                    };
-            
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-        </script>
-    </body>
-</html>
+       <?php require "../includes/footer.php"; ?>
