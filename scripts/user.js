@@ -9,6 +9,10 @@ $(function () {
             success: function (data) {
                 var dateLength = data.length;
                 console.log(data);
+                if(sessionStorage.getItem("isAdmin") == 0){
+                    var isAdmin =  document.getElementById("newevent")
+                    isAdmin.style.display="none";
+                }
                 for (var i = 0; i < dateLength; i++) {
                     if (sessionStorage.getItem("isAdmin") == 0) {
                         data[i].buttonModif = '<i>';

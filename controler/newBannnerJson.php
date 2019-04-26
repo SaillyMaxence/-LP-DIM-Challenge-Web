@@ -3,7 +3,7 @@ require("../includes/database_inc.php");
 require("../includes/requetes.php");
 // Preparing the request to grab everything from the event table
 $request = $db->prepare($iframeRestRequest);
-$request->bindParam(":visibility",$_GET["dep"]);
+$request->bindParam(":visibility",$_GET["id"]);
 // Firing the request
 $request->execute();
 // Fetching data from the request

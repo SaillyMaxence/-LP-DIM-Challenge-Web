@@ -1,5 +1,5 @@
 $(function() {
-
+    $(".form_datetime").datetimepicker({ format: 'dd-mm-yyyy hh:ii' });
 function loadData(){
     var myDataTable = document.getElementById("example-table");
     myDataTable.style.display="block";

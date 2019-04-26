@@ -1,5 +1,7 @@
 $(function() {
-    
+
+
+
     $(".form_datetime").datetimepicker({ format: 'dd-mm-yyyy hh:ii' });
     
     if(document.getElementById("addMessage") != null){
@@ -94,7 +96,7 @@ function insertMessage(){
                             alertMessageElement.innerHTML ="Message bien inseré";
                             alertElement.style.display ="block";
                             
-                            setTimeout(function(){ document.location.href="./pages/evenement.php" }, 5000);
+                            setTimeout(function(){ document.location.href="evenement.php" }, 3000);
                             
                         }
                     }
@@ -105,3 +107,4 @@ function insertMessage(){
 
 }
 })
+

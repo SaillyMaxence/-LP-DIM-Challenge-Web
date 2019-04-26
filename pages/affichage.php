@@ -9,9 +9,9 @@
 
     <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+
         body {
-            background-color: #1a1a1a;
-            background-image: url(http://crossorigin.me/http://i.imgur.com/XlUa2YE.jpg);
+            background-color: transparent;
             background-position: center top;
             font-size: 0;
             font-family: "Lato";
@@ -28,7 +28,7 @@
 
         .main-container .text {
             font-size: 22px;
-            line-height: 30px;
+            line-height: 50px;
         }
 
         .main-container .row .row-item {
@@ -90,8 +90,8 @@
         }
 
         .main-container .row .row-item.right.title-container .title-item.active {
-            -webkit-animation: activeItemDown 1s 5s forwards;
-            animation: activeItemDown 1s 5s forwards;
+            -webkit-animation: activeItemDown 1s 20s forwards;
+            animation: activeItemDown 1s 20s forwards;
         }
 
         .main-container .row .row-item.right.title-container .title-item.active:after {
@@ -102,8 +102,8 @@
             bottom: 0;
             content: "";
             background: red;
-            -webkit-animation: activeItemTimer 5s linear forwards;
-            animation: activeItemTimer 5s linear forwards;
+            -webkit-animation: activeItemTimer 20s linear forwards;
+            animation: activeItemTimer 20s linear forwards;
         }
 
         .main-container .row .row-item.right.title-container .title-item.deactive {
@@ -119,7 +119,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             color: black;
-            transition: color 0.8s;
+            transition: color 20s;
         }
 
         .main-container .row .row-item.right.summary.fade-out {
@@ -147,6 +147,7 @@
             0% {
                 right: 100%;
             }
+
             100% {
                 right: 0%;
             }
@@ -156,6 +157,7 @@
             0% {
                 right: 100%;
             }
+
             100% {
                 right: 0%;
             }
@@ -163,8 +165,9 @@
 
         @-webkit-keyframes activeItemDown {
             0% {
-                max-height: 100px;
+                max-height: 500px;
             }
+
             100% {
                 max-height: 0;
             }
@@ -172,13 +175,13 @@
 
         @keyframes activeItemDown {
             0% {
-                max-height: 100px;
+                max-height: 500px;
             }
+
             100% {
                 max-height: 0;
             }
         }
-
     </style>
 
 
@@ -189,7 +192,7 @@
 
     <div class="main-container">
         <div class="row top-row">
-            <div class="row-item left text time">00:00</div>
+            <div class="row-item left text time" style="color:black">00:00</div>
             <div class="row-item right title-container">
                 <div class="title-item text active">&nbsp;</div>
                 <div class="title-item text">&nbsp;</div>
@@ -204,93 +207,126 @@
         </div>
     </div>
 
-
-    <script src="../scripts/affichage.js"></script>
+    <script src="../libs/jquery.js"></script>
     <script>
-        var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            fox = "The quick brown fox jumps over the lazy dog",
-            titleContainer = document.getElementsByClassName("title-container")[0],
-            summaryContainer = document.getElementsByClassName("summary")[0],
-            timeContainer = document.getElementsByClassName("time")[0];
-
-        var news = [{
-                title: "FOO",
-                summary: lorem
-            }, {
-                title: "BAR",
-                summary: fox
-            }, {
-                title: "BAZ",
-                summary: lorem
-            }, {
-                title: "QUX",
-                summary: fox
-            }, {
-                title: "NEWS",
-                summary: lorem
-            }, {
-                title: "HI MOM",
-                summary: fox
-            }],
-            elems = [],
-            count = 4;
-
-        function createElems() {
-            elems = news.map(v => {
-                var item = document.createElement("div");
-                item.classList.add("title-item");
-                item.classList.add("text");
-                item.innerHTML = v.title;
-                item.summary = v.summary;
-                return item;
-            });
-            elems[0].classList.add("active");
-            elems[count].classList.add("deactive");
-
-            while (titleContainer.firstChild) {
-                titleContainer.removeChild(titleContainer.firstChild);
+        var CheminComplet = document.location.href;
+        var url = new URL(CheminComplet);
+        var width = url.searchParams.get("w");
+        var time = url.searchParams.get("t");
+        var fontSize = url.searchParams.get("fs");
+        var lineHeight = parseInt(fontSize) + 22;
+            if(width != null){
+                $(".main-container").css("width",width+"%");  
             }
-
-            for (var i = 0; i < count + 1; i++) {
-                titleContainer.appendChild(elems[i]);
+            if(fontSize != null){
+                $(".main-container .text").css("font-size",fontSize+"px");
+                $(".main-container .text").css("line-height",lineHeight+"px");    
+            
             }
-            summaryContainer.innerHTML = elems[0].summary;
-        }
-        createElems();
-
-        var cases = {
-            "activeItemDown": function() {
-                elems[0].classList.add("deactive");
-                elems[count].classList.remove("deactive");
-                summaryContainer.classList.add("fade-out");
-                summaryContainer.classList.remove("fade-in");
+            
+        var dep = url.searchParams.get("dep");
+       // console.log("width : " + width + "\nheigth:" + heigth + "\ntime: " + time + "\nfontSize: " + fontSize + "\ndep : " + dep)
+        $.ajax({
+            type: "GET",
+            data: {
+                id: dep
             },
-            "width": function() {
-                elems[0].remove();
-                elems[0].classList.remove("active");
-                elems.push(elems.shift());
-                elems[count].classList.add("deactive");
-                titleContainer.appendChild(elems[count]);
-                elems[0].classList.add("active");
-                summaryContainer.innerHTML = elems[0].summary;
-                summaryContainer.classList.add("fade-in");
-                summaryContainer.classList.remove("fade-out");
+            url: "../controler/newBannnerJson.php",
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                if (data.length != 0) {
+                    var dataToSave;
+                    for (var i = 0; i < data.length; i++) {
+                        console.log(data[i].EventMessage.length);
+                        if (data[i].EventMessage.length > 150) {
+                            dataToSave += '{"title":"' + data[i].EventTitre + '","logo":"'+ data[i].EventCreator+'","summary":"<marquee scrollamount=\'12\'>' + data[i].EventMessage + '</marquee>"},'
+                        } else {
+                            dataToSave += '{"title":"' + data[i].EventTitre + '","logo":"'+ data[i].EventCreator+'","summary":"' + data[i].EventMessage + '"},'
+                        }
+                        console.log("in");
+                    }
+
+                    dataToSave = dataToSave.substr(9);
+                    dataToSave = dataToSave.substring(0, dataToSave.length - 1);
+                    dataToSave = "[" + dataToSave + "]";
+                    dataToSave = JSON.parse(dataToSave);
+                    titleContainer = document.getElementsByClassName("title-container")[0],
+                        summaryContainer = document.getElementsByClassName("summary")[0],
+                        logoContainer = document.getElementsByClassName("logo")[0];
+                        timeContainer = document.getElementsByClassName("time")[0];
+
+                    var news = dataToSave,
+                        elems = [],
+                        count = data.length - 1;
+                    console.log(count);
+
+                    function createElems() {
+                        elems = news.map(v => {
+                            var item = document.createElement("div");
+                            item.classList.add("title-item");
+                            item.classList.add("text");
+                            item.innerHTML = v.title;
+                            item.summary = v.summary;
+                            item.logo = v.logo;
+                            return item;
+                        });
+                        elems[0].classList.add("active");
+                        elems[count].classList.add("deactive");
+
+                        while (titleContainer.firstChild) {
+                            titleContainer.removeChild(titleContainer.firstChild);
+                        }
+
+                        for (var i = 0; i < count + 1; i++) {
+                            titleContainer.appendChild(elems[i]);
+                        }
+                        summaryContainer.innerHTML = elems[0].summary;
+                        logoContainer.innerHTML= elems[0].logo;
+                    }
+                    createElems();
+
+                    var cases = {
+                        "activeItemDown": function() {
+                            elems[0].classList.add("deactive");
+                            elems[count].classList.remove("deactive");
+                            summaryContainer.classList.add("fade-out");
+                            summaryContainer.classList.remove("fade-in");
+                        },
+                        "width": function() {
+                            elems[0].remove();
+                            elems[0].classList.remove("active");
+                            elems.push(elems.shift());
+                            elems[count].classList.add("deactive");
+                            titleContainer.appendChild(elems[count]);
+                            elems[0].classList.add("active");
+                            summaryContainer.innerHTML = elems[0].summary;
+                            summaryContainer.classList.add("fade-in");
+                            summaryContainer.classList.remove("fade-out");
+                            logoContainer.innerHTML = elems[0].logo;
+                        }
+                    };
+
+                    ["animationend", "transitionend"].forEach(v => document.addEventListener(v, eventHandler));
+
+                    function eventHandler(e) {
+                        var prop = e.animationName || e.propertyName || "";
+                        (e.target.classList.contains("active") && cases[prop]) ? cases[prop](): null;
+                    }
+
+                    function updateTime() {
+                        timeContainer.innerHTML = new Date().toTimeString().substr(0, 5);
+                        setTimeout(updateTime, 10000);
+                    }
+                    updateTime();
+                } else {
+                    var mainContainer = document.getElementsByClassName("main-container")[0].style.display = "none";
+                }
+                setTimeout(function() {
+                    document.location.reload(true)
+                }, 500000);
             }
-        };
-
-        ["animationend", "transitionend"].forEach(v => document.addEventListener(v, eventHandler));
-
-        function eventHandler(e) {
-            var prop = e.animationName || e.propertyName || "";
-            (e.target.classList.contains("active") && cases[prop]) ? cases[prop](): null;
-        }
-
-        function updateTime() {
-            timeContainer.innerHTML = new Date().toTimeString().substr(0, 5);
-            setTimeout(updateTime, 10000);
-        }
-        updateTime();
-
+        });
     </script>
 
 

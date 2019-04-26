@@ -8,12 +8,12 @@ buttonLoginElement.addEventListener("click",loginElement);
 
 
 function loginElement(){
-
+    console.log("in");
 
     var login = document.getElementById("user");
     var pass  = document.getElementById("password");
-    var alertElement = document.getElementById("alert");
-    var alertLabelElement = document.getElementById("alertLabel");
+    var alertElement = document.getElementById("alertLogin");
+    var alertLabelElement = document.getElementById("alertLabelElement");
     if(login.value == "" || pass.value == ""){
         alertElement.style.display = "block";
         alertLabelElement.innerHTML = "Veuillez renseignez les champs ci-dessus";

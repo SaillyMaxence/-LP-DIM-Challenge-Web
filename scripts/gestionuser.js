@@ -33,7 +33,7 @@ $(function () {
                     var alertElement = document.getElementById("alert");
                     alertElement.style.display = "block";
                     setTimeout(function(){
-                        // location reload
+                        document.location.href="user.php"
                     },3000)
                 }
                 else if (data == 1) 

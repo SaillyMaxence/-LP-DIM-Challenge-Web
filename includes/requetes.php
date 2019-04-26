@@ -10,6 +10,6 @@ $selectRightsRequest = "SELECT * FROM Rights";
 $selectShowUserRequest = "SELECT * FROM Users";
 $updateEventRequest = "UPDATE Events SET EventTitre = :title, EventMessage = :message, EventDateDebut = :start, EventDateFin = :end,EventPriority= :priority, EventVisibility = :visibility, EventCreator= :creator WHERE EventId = :id";
 $updateUserRequest = "UPDATE Users SET UserName = :username, UserRole : role WHERE UserId = :id";
-$iframeRestRequest = "SELECT * from Events WHERE EventVisibility = :visibility";
+$iframeRestRequest = "SELECT * from Events WHERE now() BETWEEN EventDateDebut AND EventDateFin";
 $grantAdmin = "UPDATE Users SET UserRole = 1 WHERE UserId = :id";
 $denyAdmin ="UPDATE Users SET UserRole = 0 WHERE UserId = :id";
