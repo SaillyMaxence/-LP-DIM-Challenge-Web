@@ -1,7 +1,7 @@
 $(function () {
     console.log("in");
-    getEvent();
-    function getEvent() {
+    getUser();
+    function getUser() {
         $.ajax({
             type: "POST",
             url: "../controler/showUser.php",
@@ -15,14 +15,14 @@ $(function () {
                         data[i].buttonDelete = '<i>';
                     } else {
                         if (data[i].UserRole == 0) {
-                            data[i].buttonModif = '<button  data-id="' + data[i].UserId + '" class="btn btn-primary giveRole">rendre administrateur</button>';
-                            data[i].buttonDelete = '<button data-id="' + data[i].UserId + '" class="btn btn-primary delete">Supprimer</button>'
+                            data[i].buttonModif = '<button  data-id="' + data[i].UserId + '" class="btn btn-success giveRole">rendre administrateur</button>';
+                            data[i].buttonDelete = '<button data-id="' + data[i].UserId + '" class="btn btn-danger delete">Supprimer</button>'
                         } else if (data[i].UserRole == 1 && data[i].UserName == sessionStorage.getItem("username")) {
                             data[i].buttonModif = '<i>';
                             data[i].buttonDelete = '<i>';
                         } else {
-                            data[i].buttonModif = '<button  data-id="' + data[i].UserId + '" class="btn btn-primary removeRole">retirer administrateur</button>';
-                            data[i].buttonDelete = '<button data-id="' + data[i].UserId + '" class="btn btn-primary delete">Supprimer</button>'
+                            data[i].buttonModif = '<button  data-id="' + data[i].UserId + '" class="btn btn-secondary removeRole">retirer administrateur</button>';
+                            data[i].buttonDelete = '<button data-id="' + data[i].UserId + '" class="btn btn-danger delete">Supprimer</button>'
                         }
                     }
                 }
@@ -40,29 +40,29 @@ $(function () {
                         { title: "", field: "buttonDelete", formatter: "html" },
                     ],
                 });
-                
+
 
                 var grantAdmin = document.getElementsByClassName("giveRole");
-                for(var i=0;i<grantAdmin.length;i++){
-                    grantAdmin[i].addEventListener("click",function(){
+                for (var i = 0; i < grantAdmin.length; i++) {
+                    grantAdmin[i].addEventListener("click", function () {
                         var id = this.getAttribute("data-id");
                         grantRole(id);
-                    },{once:true});
+                    }, { once: true });
                 }
                 var deleteElement = document.getElementsByClassName("delete");
-                for(var i = 0 ; i<deleteElement.length;i++){
-                    deleteElement[i].addEventListener("click",function(){
+                for (var i = 0; i < deleteElement.length; i++) {
+                    deleteElement[i].addEventListener("click", function () {
                         var id = this.getAttribute("data-id");
                         deleteUser(id);
-                    },{once:true})
+                    }, { once: true })
                 }
 
                 var removeRole = document.getElementsByClassName("removeRole");
-                for(var i =0 ;i<removeRole.length;i++){
-                    removeRole[i].addEventListener("click",function(){
+                for (var i = 0; i < removeRole.length; i++) {
+                    removeRole[i].addEventListener("click", function () {
                         var id = this.getAttribute("data-id");
                         removeAdmin(id)
-                    },{once:true});
+                    }, { once: true });
                 }
 
 
@@ -74,17 +74,65 @@ $(function () {
     }
 
 
-function grantRole(id){
-    console.log(id);
-}
+    function grantRole(id) {
+        console.log(id);
+        $.ajax({
+            type: "POST",
+            data:{id:id},
+            url: "../controler/grantAdmin.php",
+            dataType: "json",
+            success: function (data) {
+                getUser();
+            }
+        });
 
-function deleteUser(id){
-    console.log(id);
-}
 
-function removeAdmin(id){
-    console.log(id);
-}
+
+    }
+
+    function deleteUser(id) {
+        console.log(id);
+        var exampleModalLabel = document.getElementById("exampleModalLabel").innerHTML = "Attention : ";
+        var modalBodyElement = document.getElementById("modalBody").innerHTML = "Êtes-vous sur de vouloirs supprimer ?";
+        $("#myModal").modal('show');
+        
+        var dismiss = document.getElementById("dismiss");
+            dismiss.addEventListener("click",function(){
+                $('#myModal').modal('hide');
+                getUser();
+            },{once:true})
+            
+        var saveElement = document.getElementById("saveIt");
+        saveElement.addEventListener("click",function(){
+            console.log(id);
+             $.ajax({
+            type: "POST",
+            data:{id:id},
+            url: "../controler/deleteUser.php",
+            dataType: "json",
+            success: function(data) {
+               $('#myModal').modal('hide');
+               getUser();
+            }
+                 
+             });
+        },{once:true})
+        
+        
+    }
+
+    function removeAdmin(id) {
+        $.ajax({
+            type: "POST",
+            data:{id:id},
+            url: "../controler/removeAdmin.php",
+            dataType: "json",
+            success: function (data) {
+                getUser();
+            }
+        });
+
+    }
 
 
 

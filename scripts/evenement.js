@@ -15,14 +15,14 @@ function loadData(){
                 if(sessionStorage.getItem("isAdmin") == 0){
                     if(sessionStorage.getItem("username") == data[i].EventCreator){
                         data[i].buttonModif = '<button  data-id="'+ data[i].EventId+'" class="btn btn-secondary update">Modifier</button>';
-                        data[i].buttonDelete = '<button data-id="'+ data[i].EventId+'" class="btn btn-secondary delete">Supprimer</button>';
+                        data[i].buttonDelete = '<button data-id="'+ data[i].EventId+'" class="btn btn-danger delete">Supprimer</button>';
                     }else{
                         data[i].buttonModif = '<i>';
                         data[i].buttonDelete = '<i>';
                     }
                 }else{
                     data[i].buttonModif = '<button  data-id="'+ data[i].EventId+'" class="btn btn-secondary update">Modifier</button>';
-                    data[i].buttonDelete = '<button data-id="'+ data[i].EventId+'" class="btn btn-secondary delete">Supprimer</button>';
+                    data[i].buttonDelete = '<button data-id="'+ data[i].EventId+'" class="btn btn-danger delete">Supprimer</button>';
                 }
                 
                 
